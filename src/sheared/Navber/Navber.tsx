@@ -23,7 +23,11 @@ const Navber = () => {
           <li>
             <Link to='/dashbord' >dashbord</Link>
           </li>
-          <li> <button className="uppercase bg-orange-600 py-1 px-6 font-semibold">Login</button> </li>
+          <li> 
+            <Link to='/register'>
+            <button className="uppercase bg-orange-600 py-1 px-6 font-semibold">Register</button> 
+            </Link>
+            </li>
 
           <li className='hover:text-orange-600 flex items-center'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 hover:text-orange-600 text-white">

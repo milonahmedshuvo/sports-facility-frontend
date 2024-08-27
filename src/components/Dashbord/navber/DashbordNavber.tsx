@@ -5,9 +5,9 @@ const DashbordNavber = () => {
 
 
   return (
-    <div className="flex flex-col lg:flex-row bg-[#1D222B] py-4">
+    <div className="flex flex-col lg:flex-row bg-[#1D222B] py-6 ">
 
-      <div className="pl-6 lg:pl-3 w-full lg:w-1/5">
+      <div className="pl-6 lg:pl-3 w-full lg:w-1/5 ">
         <img src={logo} alt="" />
       </div>
 
