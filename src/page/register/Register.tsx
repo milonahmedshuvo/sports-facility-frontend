@@ -21,6 +21,7 @@ const Register = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm<Inputs>({ defaultValues: { role: 'user' } })
   
   const [ userRegister, { data, isError, isSuccess } ] = useUserRegisterMutation(undefined)
@@ -55,6 +56,7 @@ const Register = () => {
       data: data
     })
 
+    reset()
   }
 
 

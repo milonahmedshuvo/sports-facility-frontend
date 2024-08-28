@@ -28,7 +28,7 @@ const DashbordPage = () => {
               </div>
 
 
-              <button className="btn btn-xs bg-[#3B94E9] hover:bg-[#3B94E9] text-white font-bold">new</button>
+              <button className="btn btn-xs bg-[#dd0c25] hover:bg-[#dd0c25] text-white font-bold">new</button>
 
             </li>
         </ul>
@@ -88,7 +88,7 @@ const DashbordPage = () => {
           </div>
 
 
-          <p className="text-white">content</p>
+          {/* <p className="text-white">content</p> */}
 
            <Outlet/>
 

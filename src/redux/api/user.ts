@@ -4,7 +4,15 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const userApi = createApi({
   reducerPath: 'pokemonApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/api/v1' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/api/v1',
+     prepareHeaders: (Headers) => {
+      const token = localStorage.getItem('accessToken')
+      if(token){
+        Headers.set('Authorization', token)
+      }
+     }
+   }),
+   
   endpoints: (builder) => ({
     userRegister: builder.mutation({
       query: ( data ) => {
@@ -26,11 +34,21 @@ export const userApi = createApi({
           body: data
         }
       } 
-    })
+    }),
+
+    getSingleuserInfo: builder.query({
+      query: () => {
+        console.log("redux api")
+        return {
+          url: '/user/single',
+        }
+      } 
+    }),
+
   }),
 })
 
 
 
 
-export const { useUserRegisterMutation, useUserLoginMutation } = userApi;
+export const { useUserRegisterMutation, useUserLoginMutation, useGetSingleuserInfoQuery } = userApi;
