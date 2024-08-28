@@ -5,6 +5,8 @@ import DashbordPage from "../page/dashbord/DashbordPage";
 import UserInfo from "../components/Dashbord/user/userInfo/UserInfo";
 import Register from "../page/register/Register";
 import LoginPage from "../page/loginPage/LoginPage";
+import Aboutus from "../page/aboutus/Aboutus";
+
 
 
 export const router = createBrowserRouter([
@@ -23,6 +25,10 @@ export const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <LoginPage/>
+            },
+            {
+                path: '/aboutus',
+                element: <Aboutus/>
             }
         ]
     },

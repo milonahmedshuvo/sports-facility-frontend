@@ -1,0 +1,32 @@
+ [
+    {
+        "image": "https://www.catapult.com/wp-content/uploads/2023/01/WILL-LOPES.png",
+        "name": "WILL LOPES",
+        "identy": "CHIEF EXECUTIVE OFFICER"
+    },
+    {
+        "image": "https://www.catapult.com/wp-content/uploads/2023/07/Bob-Cruickshank-BW3-1536x1536.jpg",
+        "name": "BOB CRUICKSHANK",
+        "identy": "CHIEF FINANCIAL OFFICER"
+    },
+    {
+        "image": "https://www.catapult.com/wp-content/uploads/2023/07/ZOE-RUMFORD-BW3-1536x1536.jpg",
+        "name": "ZOE RUMFORD",
+        "identy": "CHIEF PEOPLE OFFICER"
+    },
+    {
+        "image": "https://www.catapult.com/wp-content/uploads/2023/01/MATT-BAIROS0D.png",
+        "name": "MATT BAIROS",
+        "identy": "CHIEF PRODUCT OFFICER"
+    },
+    {
+        "image": "https://www.catapult.com/wp-content/uploads/2023/06/Gareth-Griffith-BW-min-1536x1536.jpg",
+        "name": "GARETH GRIFFITH",
+        "identy": "CHIEF TECHNOLOGY OFFICER"
+    },
+    {
+        "image": "https://www.catapult.com/wp-content/uploads/2023/01/ALBERT-TSAI.png",
+        "name": "ALBERT TSAI",
+        "identy": "SENIOR VICE PRESIDENT"
+    }
+]
