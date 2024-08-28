@@ -1,5 +1,7 @@
 import signin from '../../image/signin.png'
 import { useForm, SubmitHandler } from "react-hook-form"
+import { useUserLoginMutation } from '../../redux/api/user'
+import toast from 'react-hot-toast'
 
 type Inputs = {
 
@@ -15,14 +17,30 @@ const LoginPage = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm<Inputs>()
+  const [userLoginFunc, {data, error, isError, isSuccess} ] = useUserLoginMutation(undefined)
 
+  if(isError){
+    console.log(error)
+    toast.error("user login filed!!")
+  }
+  
 
+  if(isSuccess){
+    toast.success('user login successfull!!')
+    localStorage.setItem('accessToken', data.data.accessToken)
+  }
 
 
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data)
+    // console.log(data)
+    userLoginFunc({
+      data: data
+    })
+
+    reset()
   }
 
 
