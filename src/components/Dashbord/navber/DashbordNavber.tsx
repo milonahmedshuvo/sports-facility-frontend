@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../../image/sports.webp'
 
 
@@ -8,7 +9,7 @@ const DashbordNavber = () => {
     <div className="flex flex-col lg:flex-row bg-[#1D222B] py-6 ">
 
       <div className="pl-6 lg:pl-3 w-full lg:w-1/5 ">
-        <img src={logo} alt="" />
+      <Link to='/'> <img  className='w-[200px]' src={logo} alt="" /> </Link>
       </div>
 
 

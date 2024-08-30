@@ -10,14 +10,14 @@ const Navber = () => {
     <div className="bg-[#000000] text-white flex py-7 ">
 
       <div className="logo w-2/5 ml-4 ">
-        <img className='w-[200px]' src={logo} alt="" />
+        <Link to='/'> <img className='w-[200px]' src={logo} alt="" /> </Link>
       </div>
 
 
       <div className="manu w-3/5  mr-4">
 
         <ul className="flex flex-col lg:flex-row  uppercase w-3/4 justify-between ml-auto">
-          <li  className='font-mark-pro hover:text-[#FF004C] hover:underline'>Home</li>
+         <Link to='/'> <li  className='font-mark-pro hover:text-[#FF004C] hover:underline'>Home</li></Link>
           <li>
             <Link to='/aboutus' className='font-mark-pro hover:text-[#FF004C] hover:underline' >Aboutus</Link>
           </li>
