@@ -6,6 +6,7 @@ import UserInfo from "../components/Dashbord/user/userInfo/UserInfo";
 import Register from "../page/register/Register";
 import LoginPage from "../page/loginPage/LoginPage";
 import Aboutus from "../page/aboutus/Aboutus";
+import CreateFacility from "../components/Dashbord/admin/CreateFacility";
 
 
 
@@ -39,6 +40,11 @@ export const router = createBrowserRouter([
             {
                 path: '/dashbord',
                 element: <UserInfo/>
+            },
+            // admin routes 
+            {
+                path: '/dashbord/createFacility',
+                element: <CreateFacility/> 
             }
         ]
     }
