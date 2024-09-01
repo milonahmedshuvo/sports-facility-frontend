@@ -7,6 +7,10 @@ import Register from "../page/register/Register";
 import LoginPage from "../page/loginPage/LoginPage";
 import Aboutus from "../page/aboutus/Aboutus";
 import CreateFacility from "../components/Dashbord/admin/CreateFacility";
+import CreateAdmin from "../components/Dashbord/admin/CreateAdmin";
+import AllFacility from "../components/Dashbord/admin/AllFacility";
+import FacilityListingPage from "../page/facilityListingPage/FacilityListingPage";
+import DatailsPage from "../page/facilityListingPage/DatailsPage";
 
 
 
@@ -30,6 +34,10 @@ export const router = createBrowserRouter([
             {
                 path: '/aboutus',
                 element: <Aboutus/>
+            },
+            {
+                path: '/facilityListingPage',
+                element: <FacilityListingPage/>
             }
         ]
     },
@@ -45,7 +53,22 @@ export const router = createBrowserRouter([
             {
                 path: '/dashbord/createFacility',
                 element: <CreateFacility/> 
+            },
+            {
+                path: '/dashbord/createAdmin',
+                element: <CreateAdmin/>
+            },
+            {
+                path: '/dashbord/allFacility',
+                element: <AllFacility/>
+            },
+            {
+                path: '/dashbord/datails/:id',
+                element: <DatailsPage/>,
+                loader: async ({params}) => await fetch(`http://localhost:5000/api/v1/facility/single/${params.id}`) 
             }
+            
+
         ]
     }
 ])

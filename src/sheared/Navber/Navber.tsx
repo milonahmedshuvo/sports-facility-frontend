@@ -21,7 +21,9 @@ const Navber = () => {
           <li>
             <Link to='/aboutus' className='font-mark-pro hover:text-[#FF004C] hover:underline' >Aboutus</Link>
           </li>
-          <li  className='font-mark-pro hover:text-[#FF004C] hover:underline'>admin</li>
+          <li >
+            <Link  className='font-mark-pro hover:text-[#FF004C] hover:underline' to='/facilityListingPage'>Facility</Link>
+          </li>
           <li>
             <Link to='/dashbord'  className='font-mark-pro hover:text-[#FF004C] hover:underline'>dashbord</Link>
           </li>

@@ -1,5 +1,9 @@
-import axios from "axios"
 import { useForm, SubmitHandler } from "react-hook-form"
+import { useFacilityPostMutation } from "../../../redux/api/user"
+import toast from "react-hot-toast"
+import axios from "axios"
+
+
 
 
 
@@ -13,7 +17,6 @@ type Inputs = {
 
 
 const CreateFacility = () => {
- 
   const {
     register,
     handleSubmit,
@@ -21,17 +24,22 @@ const CreateFacility = () => {
     reset
   } = useForm<Inputs>()
   
+  const [facilityPost, {data, error, isSuccess, isError} ] = useFacilityPostMutation()
+  
+  console.log(data)
   
 
 
-//   if(isError){
-//     toast.error('User Register Filed...!!')
-//   }
 
-//   if(isSuccess){
-//     toast.success('User Register Successfully...!!')
-//     localStorage.setItem('accessToken', data.data.accessToken)
-//   }
+  if(isError){
+    toast.error('Facility Filed...!!')
+    console.log("backend error", error)
+  }
+
+  if(isSuccess){
+    toast.success('Create Facility Successfully...!!')
+    console.log(data)
+  }
 
 
 
@@ -47,6 +55,15 @@ const CreateFacility = () => {
   
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+
+    //  facilityPost({
+    //     data: data
+    //  })
+
+    // reset()
+
+
+
     // console.log(data)
      console.log(data.image[0])
 
@@ -62,12 +79,23 @@ const CreateFacility = () => {
               },
         })
 
+         
+         const facilityData = {
+            name: data.name,
+            description: data.description,
+            pricePerHour : Number(data.pricePerHour),
+            location: data.location,
+            image: response.data.data.url
+           }
 
 
-        // console.log("image upload success:", response.data.data.url)
-        const facilityData = {...data, image: response.data.data.url}
+       facilityPost({
+           data: facilityData
+       })
 
-        console.log('backend a jabe:', facilityData)
+        console.log("image upload success:", response.data.data.url)
+        
+       
         reset()
     } catch(err){
         console.log("error uploading image", err)
@@ -76,7 +104,9 @@ const CreateFacility = () => {
 
 
 
+    
 
+   
 
     // userRegister({
     //   data: data
@@ -178,21 +208,18 @@ const CreateFacility = () => {
 
 
 
-
+ 
           <div className="relative flex items-center my-6">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 w-5 h-5 text-gray-500 absolute left-3">
               <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
             </svg>
-
-
-
             <input
               type="file"
               className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
               placeholder="file"
               {...register("image", { required: true })}
             />
-          </div>
+          </div> 
 
 
           {errors.name && <span>This field is  required </span>}

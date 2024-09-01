@@ -12,7 +12,7 @@ export const userApi = createApi({
       }
      }
    }),
-   
+   tagTypes: ['facility'],
   endpoints: (builder) => ({
     userRegister: builder.mutation({
       query: ( data ) => {
@@ -20,6 +20,16 @@ export const userApi = createApi({
 
         return {
           url: `/user/create`,
+          method: "POST",
+          body: data
+         }
+      }
+    }),
+
+    createAdmin: builder.mutation({
+      query: ( data ) => {
+        return {
+          url: `/user/createAdmin`,
           method: "POST",
           body: data
          }
@@ -35,6 +45,42 @@ export const userApi = createApi({
         }
       } 
     }),
+    facilityPost: builder.mutation({
+      query: (data) => {
+        return {
+          url: '/facility/create',
+          method: 'POST',
+          body: data
+        }
+      },
+      invalidatesTags: ['facility'] 
+    }),
+    updateFacility : builder.mutation({
+      query: ({id, data}) => {
+        console.log("redux id", id)
+        console.log('redux data', data)
+
+        return {
+          url: `/facility/update/${id}`,
+          method: 'PUT',
+          body: data
+        }
+      },
+      invalidatesTags: ['facility'] 
+    }),
+
+    deleteFacility : builder.mutation({
+      query: (id) => {
+        console.log("redux delete id", id)
+        // console.log('redux data', data)
+
+        return {
+          url: `/facility/delete/${id}`,
+          method: 'DELETE',
+        }
+      },
+      invalidatesTags: ['facility'] 
+    }),
 
     getSingleuserInfo: builder.query({
       query: () => {
@@ -45,10 +91,20 @@ export const userApi = createApi({
       } 
     }),
 
+    getAllFacility: builder.query({
+      query: () => {
+       
+        return {
+          url: '/facility/all',
+        }
+      }, 
+      providesTags: ['facility']
+    }),
+
   }),
 })
 
 
 
 
-export const { useUserRegisterMutation, useUserLoginMutation, useGetSingleuserInfoQuery } = userApi;
+export const { useUserRegisterMutation, useUserLoginMutation, useGetSingleuserInfoQuery,useFacilityPostMutation, useCreateAdminMutation, useGetAllFacilityQuery, useUpdateFacilityMutation, useDeleteFacilityMutation } = userApi;
