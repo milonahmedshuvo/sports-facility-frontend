@@ -69,7 +69,7 @@ const FacilityListingPage = () => {
                         <p>Location: {item.location}</p>
                         <p>price: {item.pricePerHour}</p>
                         <Link to={`/dashbord/datails/${item._id}`} >
-                        <button className=' mt-3 btn btn-sm uppercase font-semibold bg-red-600 hover:bg-red-600 hover:text-white text-white w-full'>Datails</button>
+                        <button className=' mt-3 btn btn-sm uppercase font-semibold bg-red-600 hover:bg-red-600 hover:text-white text-white w-full'>View Details</button>
                         </Link>
                         
                     </div>)
