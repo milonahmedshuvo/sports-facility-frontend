@@ -25,19 +25,19 @@ const Facility = () => {
     ]
 
     return (
-        <div className="mt-10">
+        <div className="mt-10 ">
             
 
-            <div className="mb-10">
+            <div className="mb-10 ">
                 <p className="uppercase text-4xl font-bold text-center">our Facility featured</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  ">
             {
                 faciltys.map((item) => (
-                    <div>
+                    <div className="border-b-2 pb-4">
                         <img src={item.image} alt="" />
-                        <p>{item.name}</p>
+                        <p className="text-xl my-2">{item.name}</p>
                         <p>{item.description.length > 40 ? `${item.description.substring(0, 105)}...` : `${item.description}` } </p>
                     </div>
                 ))
