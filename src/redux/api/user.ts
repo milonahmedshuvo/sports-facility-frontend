@@ -133,10 +133,19 @@ export const userApi = createApi({
       
     }),
 
+    getAllbooking: builder.query({
+      query: () => {
+
+        return {
+          url: '/booking/all'
+        }
+      }
+    }),
+
   }),
 })
 
 
 
 
-export const { useUserRegisterMutation, useUserLoginMutation, useGetSingleuserInfoQuery,useFacilityPostMutation, useCreateAdminMutation, useGetAllFacilityQuery, useUpdateFacilityMutation, useDeleteFacilityMutation, useGetCheckAvaiableSortQuery, useBookingPostMutation, useGetUserAllBookingQuery } = userApi;
+export const { useUserRegisterMutation, useUserLoginMutation, useGetSingleuserInfoQuery,useFacilityPostMutation, useCreateAdminMutation, useGetAllFacilityQuery, useUpdateFacilityMutation, useDeleteFacilityMutation, useGetCheckAvaiableSortQuery, useBookingPostMutation, useGetUserAllBookingQuery, useGetAllbookingQuery } = userApi;

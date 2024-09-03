@@ -14,6 +14,8 @@ import DatailsPage from "../page/facilityListingPage/DatailsPage";
 import ContackusPage from "../page/contackus/ContackusPage";
 import BookingPage from "../page/bookingPage/BookingPage";
 import UserBooking from "../components/Dashbord/user/userbooking/userBooking";
+import AllBooking from "../components/Dashbord/admin/AllBooking";
+import ErrorPage from "../sheared/ErrorPage";
 
 
 
@@ -21,6 +23,7 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <Layout/>,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 path: '/',
@@ -82,6 +85,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashbord/allFacility',
                 element: <AllFacility/>
+            },
+            {
+                path: '/dashbord/allBooking',
+                element: <AllBooking/>
             },
             
             
