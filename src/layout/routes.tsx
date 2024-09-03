@@ -52,12 +52,12 @@ export const router = createBrowserRouter([
             {
                 path: '/dashbord/datails/:id',
                 element: <DatailsPage/>,
-                loader: async ({params}) => await fetch(`http://localhost:5000/api/v1/facility/single/${params.id}`) 
+                loader: async ({params}) => await fetch(`https://sports-facility-backend.vercel.app/api/v1/facility/single/${params.id}`) 
             },
             {
                 path: '/dashbord/bookingPage/:id',
                 element: <BookingPage></BookingPage>,
-                loader: async ({params}) => await fetch(`http://localhost:5000/api/v1/facility/single/${params.id}`) 
+                loader: async ({params}) => await fetch(`https://sports-facility-backend.vercel.app/api/v1/facility/single/${params.id}`) 
             }
         ]
     },

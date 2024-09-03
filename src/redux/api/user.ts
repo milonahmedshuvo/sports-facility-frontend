@@ -1,10 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 // import type { Pokemon } from './types'
 
+// http://localhost:5000/api/v1
 
 export const userApi = createApi({
   reducerPath: 'pokemonApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/api/v1',
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://sports-facility-backend.vercel.app/api/v1',
      prepareHeaders: (Headers) => {
       const token = localStorage.getItem('accessToken')
       if(token){

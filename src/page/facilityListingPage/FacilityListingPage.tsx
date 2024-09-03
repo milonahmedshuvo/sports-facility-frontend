@@ -39,7 +39,7 @@ const FacilityListingPage = () => {
 
 
     return (
-        <div>
+        <div className='mb-24'>
             <form action="" onSubmit={handleSubmit(onSubmit)} className='flex items-center ml-10 my-10'>
                 <div className="relative flex  items-center ml-2  ">
 
