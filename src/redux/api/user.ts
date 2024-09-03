@@ -101,10 +101,32 @@ export const userApi = createApi({
       providesTags: ['facility']
     }),
 
+    getCheckAvaiableSort: builder.query({
+      query: (date) => {
+        console.log("redux date", date)
+
+        return {
+          url: `/booking/check-availability?date=${date}`,
+        }
+      } 
+    }),
+    bookingPost: builder.mutation({
+      query: (data) => {
+        console.log(data)
+        
+        return {
+          url: '/booking/create',
+          method: 'POST',
+          body: data
+        }
+      },
+       
+    }),
+
   }),
 })
 
 
 
 
-export const { useUserRegisterMutation, useUserLoginMutation, useGetSingleuserInfoQuery,useFacilityPostMutation, useCreateAdminMutation, useGetAllFacilityQuery, useUpdateFacilityMutation, useDeleteFacilityMutation } = userApi;
+export const { useUserRegisterMutation, useUserLoginMutation, useGetSingleuserInfoQuery,useFacilityPostMutation, useCreateAdminMutation, useGetAllFacilityQuery, useUpdateFacilityMutation, useDeleteFacilityMutation, useGetCheckAvaiableSortQuery, useBookingPostMutation } = userApi;

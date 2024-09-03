@@ -11,7 +11,8 @@ import CreateAdmin from "../components/Dashbord/admin/CreateAdmin";
 import AllFacility from "../components/Dashbord/admin/AllFacility";
 import FacilityListingPage from "../page/facilityListingPage/FacilityListingPage";
 import DatailsPage from "../page/facilityListingPage/DatailsPage";
-import ContackusPage from "../page/contackus/contackusPage";
+import ContackusPage from "../page/contackus/ContackusPage";
+import BookingPage from "../page/bookingPage/BookingPage";
 
 
 
@@ -47,6 +48,11 @@ export const router = createBrowserRouter([
             {
                 path: '/dashbord/datails/:id',
                 element: <DatailsPage/>,
+                loader: async ({params}) => await fetch(`http://localhost:5000/api/v1/facility/single/${params.id}`) 
+            },
+            {
+                path: '/dashbord/bookingPage/:id',
+                element: <BookingPage></BookingPage>,
                 loader: async ({params}) => await fetch(`http://localhost:5000/api/v1/facility/single/${params.id}`) 
             }
         ]
