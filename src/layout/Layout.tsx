@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom"
 import Navber from "../sheared/Navber/Navber"
+import Footer from "../sheared/Footer/Footer"
 
 
 const Layout = () => {
@@ -8,6 +9,7 @@ const Layout = () => {
     <div>
       <Navber/>
       <Outlet/>
+      <Footer/>
     </div>
   )
 }
