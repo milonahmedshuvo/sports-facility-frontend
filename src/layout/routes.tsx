@@ -13,6 +13,7 @@ import FacilityListingPage from "../page/facilityListingPage/FacilityListingPage
 import DatailsPage from "../page/facilityListingPage/DatailsPage";
 import ContackusPage from "../page/contackus/ContackusPage";
 import BookingPage from "../page/bookingPage/BookingPage";
+import UserBooking from "../components/Dashbord/user/userbooking/userBooking";
 
 
 
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashbord',
                 element: <UserInfo/>
+            },
+            {
+                path: '/dashbord/user-booking',
+                element: <UserBooking/>
             },
             // admin routes 
             {
