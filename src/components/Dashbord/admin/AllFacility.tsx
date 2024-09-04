@@ -2,6 +2,7 @@ import {  useState } from "react";
 import { useDeleteFacilityMutation, useGetAllFacilityQuery } from "../../../redux/api/user"
 import Editmodal from "./Editmodal";
 import toast from "react-hot-toast";
+import Spinner from "../../../sheared/Spinner/Spinner";
 
 
 
@@ -19,11 +20,15 @@ type TFacility = {
 
 const AllFacility = () => {
      const [facility, setFacility] = useState<TFacility>()
-     const {data} = useGetAllFacilityQuery(undefined)
+     const {data, isLoading} = useGetAllFacilityQuery(undefined)
      const [deleteItem, {  isSuccess,  }] = useDeleteFacilityMutation();
 
      if(isSuccess){
       toast.success('Delete Succesfully!!')
+     }
+
+     if(isLoading){
+      return <Spinner/>
      }
 
 
@@ -109,7 +114,7 @@ const AllFacility = () => {
          <td>
              
              {/* <Link to={`/dashbord/editFacility/${facility._id}`} > */}
-            <button onClick={() => { additionalFunction(facility); document.getElementById('my_modal_3')?.showModal()}} className="btn btn-xs bg-[#3B94E9] text-white">Edit</button>
+            <button onClick={() => { additionalFunction(facility); (document.getElementById('my_modal_3') as HTMLDialogElement )?.showModal()}} className="btn btn-xs bg-[#3B94E9] text-white">Edit</button>
             {/* </Link> */}
             </td>
 

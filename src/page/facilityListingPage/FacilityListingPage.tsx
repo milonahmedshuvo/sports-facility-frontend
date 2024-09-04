@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useGetAllFacilityQuery } from '../../redux/api/user'
 import { Link } from 'react-router-dom';
+import Spinner from '../../sheared/Spinner/Spinner';
 
 type TFacility = {
     name: string;
@@ -20,7 +21,7 @@ type Inputs = {
 
 
 const FacilityListingPage = () => {
-    const { data } = useGetAllFacilityQuery(undefined)
+    const { data, isLoading } = useGetAllFacilityQuery(undefined)
     const {
         register,
         handleSubmit,
@@ -36,8 +37,10 @@ const FacilityListingPage = () => {
     }
 
 
-
-
+        if(isLoading){
+            return <Spinner/>
+        }
+     
     return (
         <div className='mb-24'>
             <form action="" onSubmit={handleSubmit(onSubmit)} className='flex items-center ml-10 my-10'>

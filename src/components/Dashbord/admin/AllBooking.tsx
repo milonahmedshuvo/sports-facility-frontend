@@ -1,4 +1,5 @@
 import { useGetAllbookingQuery } from "../../../redux/api/user";
+import Spinner from "../../../sheared/Spinner/Spinner";
 
 
 type TBooking = {
@@ -20,9 +21,12 @@ type TBooking = {
 
 
 const AllBooking = () => {
-    const {data} = useGetAllbookingQuery(undefined)
+    const {data, isLoading} = useGetAllbookingQuery(undefined)
 
    
+     if(isLoading){
+      return <Spinner/>
+     }
    
 
   return (

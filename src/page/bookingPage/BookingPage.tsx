@@ -14,10 +14,25 @@ type TimeSorts = {
   endTime: string,
 }
 
+// defined booking type 
+type TFacility = {
+  data: {
+    name: string;
+  description: string;
+  pricePerHour: number;
+  location: string,
+  isDeleted: boolean,
+  image?: string,
+  _id: string
+  }
+}
+
+
+
 
 const BookingPage = () => {
   const [date, setDate] = useState<string>('')
-  const booking = useLoaderData()
+  const booking = useLoaderData() as TFacility
   const { data } = useGetCheckAvaiableSortQuery(date)
   const [bookingPost, { data:bookingResponse, error, isSuccess } ] = useBookingPostMutation()
 
@@ -120,7 +135,7 @@ const BookingPage = () => {
         <div>
           <p className="text-orange-600 font-semibold text-xl my-8">Avaiable Sorts</p>
           {
-            data?.data?.map((sort: string) => <div className="flex gap-6">
+            data?.data?.map((sort: TimeSorts) => <div className="flex gap-6">
               <p className="bg-gray-900 py-2 px-10 text-white font-semibold my-2 ">{sort?.startTime}</p>
               <p className="bg-gray-900 py-2 px-10 text-white font-semibold my-2 ">{sort?.endTime}</p>
             </div>)
