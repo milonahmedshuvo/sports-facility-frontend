@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+### Project Name
+* Sports Facility Booking Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Introduction
+* The project to integrate the frontend with add the backend system developed in Sports backend part, which is a sports facility booking platform.the backend part emplement module partarn code. This integration  creating a fully functional user interface that communicates with the backend via API calls. Additionally, I add both a user dashboard and an admin dashboard, ensuring a smooth and user-friendly experience for booking sports facilities.
 
-Currently, two official plugins are available:
+### Project Description
+* This project main goals to provited sports Facility Booking service in user.This project have two role user and admin. user will can create account role user and admin. add user dashbord and admin dashbord which give specific access their dashbord.user will can see their specific booking feature in user dashbord. Admin will manage to create facility, admin account, and see all booking in admin dashbord.Eash role have specific access route which element by jwt token.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
+* this project have two role user and admin.
+* this project use redux and manage all api call by redux. 
+* user can see avaiable sorts time for booking before confirm booking.
+* emplement user dashbord which access specific on feature and
+* emplement admin dashbord 
+* admin can create multipule admin account in admin dashbord.
+* admin can create facility and emplement CRUD operation.
+* admin can see all booking feature.
 
-## Expanding the ESLint configuration
+### Technology Stack
+* Frontend technology : React, Redux, Typescript and tailwind etc.
+* Backend technology : Node js and Express js , Mongodb, Mongoose and typescript use modules pattern.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Installation Guideline 
+* git clone ( repo link)
+* npm install
+* npm run dev
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Local Project Dependencies Installed via npm
+* npm install react react-dom
+* npm install typescript
+* npm install react-hook-form
+* npm install tailwindcss
+* npm install @reduxjs/toolkit react-redux
+* npm install axios
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
