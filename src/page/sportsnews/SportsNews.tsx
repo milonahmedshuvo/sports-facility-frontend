@@ -32,51 +32,52 @@ const SportsNews = () => {
         {
             "image": "https://cdn.nba.com/manage/2024/08/jokic-dribbling.jpg?w=384&h=224",
             "name": "NBA 2K25 top 100 player ratings released",
-            "title": "The NBA 2K25 top 100 ratings have arrived. Check out where the league's best rank ahead of the game's release.",
+            "title": "The NBA 2K25 top 100 ratings have arrived. Check out where the league's best rank ahead of the game",
+
             "date": "August 27, 2024"
         },
         {
             "image": "https://cdn.nba.com/manage/2024/08/sga-guarding-luka.jpg?w=384&h=224",
-            "name": "RotoWire breaks down an early look at the 2024-25 Top 150 Fantasy Basketball Rankings.",
+            "name": "RotoWire breaks down an early look at the 2024",
             "title": "RotoWire breaks down an early look at the 2024-25 Top 150 Fantasy Basketball Rankings.",
             "date": "August 21, 2024"
         },
         {
             "image": "https://cdn.nba.com/manage/2024/08/lebron-guarding-curry.jpg?w=384&h=224",
-            "name": "Emirates NBA Cup, Group Play: 12 matchups to watch",
+            "name": "Emirates NBA Cup, Group Play: 12 matchups",
             "title": "Here are 12 matchups to circle on your calendar when the tournament tips on Nov. 12.",
             "date": "August 14, 2024"
         },
         {
             "image": "https://cdn.nba.com/manage/2024/08/GettyImages-2152309818-scaled-e1722880797972.jpg?w=384&h=224",
-            "name": "New Netflix series to chronicle LeBron, Tatum & more",
+            "name": "New Netflix series to chronicle LeBron",
             "title": "Get a team-by-team look at where all 15 squads in the Eastern Conference rank after a busy offseason.",
             "date": "August 23, 2024"
         }
     ]
-      
-  return (
-    <div className=" mx-0 md:mx-10 ">
-      <p className="text-2xl font-semibold font-mark-pro uppercase border-b-2">sports news</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
-            {
-                sportsnews.map((news, index) => <div key={index} className='flex gap-5 my-4'>
-                      <img className='h-[100px]' src={news.image} alt="" />
-                      <div className='flex flex-col justify-between'>
-                      <div>
-                      <p className='text-xl font-bold text-black font-mark-pro'>{news.name}</p>
-                      <p>{news.title}</p>
-                      </div>
-                      <p className='text-sm'>{news.date}</p>
-                      </div>
-                </div>)
-            }
+    return (
+        <div className=" my-20 mx-0 md:mx-10 ">
+            <p className="text-2xl font-semibold font-mark-pro uppercase border-b-2">sports news</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                {
+                    sportsnews.map((news, index) => <div key={index} className='flex gap-5 my-4'>
+                        <img className='h-[100px]' src={news.image} alt="" />
+                        <div className='flex flex-col justify-between'>
+                            <div>
+                                <p className='text-xl font-bold text-black font-mark-pro'>{news.name}</p>
+                                <p>{news.title}</p>
+                            </div>
+                            <p className='text-sm'>{news.date}</p>
+                        </div>
+                    </div>)
+                }
+            </div>
+
+
         </div>
-
-
-    </div>
-  )
+    )
 }
 
 export default SportsNews
