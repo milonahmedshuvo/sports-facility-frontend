@@ -5,78 +5,89 @@
 
 
 .testimonial-slider {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    overflow: hidden; /* Hide the overflow to prevent seeing multiple testimonials at once */
-    position: relative;
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
-  
-  .testimonial-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
-  }
-  
-  .testimonial {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 20px;
-  }
-  
-  .controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-  }
-  
-  .controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .controls button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  /* Hide the overflow to prevent seeing multiple testimonials at once */
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 
-  /* font add in my projects  */
-  @font-face {
-    font-family: 'Mark Pro';
-    src: url('/path-to-font/MarkPro-Regular.ttf') format('truetype'),
-         url('/path-to-font/MarkPro-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
+.testimonial-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  /* Smooth transition for sliding */
+}
+
+.testimonial {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.controls button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
 
-
+/* font add in my projects  */
+@font-face {
+  font-family: 'Mark Pro';
+  src: url('/path-to-font/MarkPro-Regular.ttf') format('truetype'),
+    url('/path-to-font/MarkPro-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
-  .spinner {
-    border: 8px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #09f;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
+
+
+
+
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #09f;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  
+}
+
+.videoDown {
+  z-index: 0px;
+}
+
+
+.color-spred {
+  width: 100%;
+  box-shadow: 0px 0px 36px 65px black; 
+  right: -20px;
+}
