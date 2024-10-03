@@ -89,5 +89,17 @@
 .color-spred {
   width: 100%;
   box-shadow: 0px 0px 36px 65px black; 
-  right: -20px;
+  
+}
+
+
+.image-color-spred {
+  box-shadow: 0px -30px 26px black; 
+}
+
+
+.vertical-timeline::before {
+  background: gray !important;
+  width: 2px !important;
+  
 }
