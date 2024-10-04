@@ -66,7 +66,7 @@ const SportsNews = () => {
                         <img className='h-[100px]' src={news.image} alt="" />
                         <div className='flex flex-col justify-between'>
                             <div>
-                                <p className='text-xl font-bold text-black font-mark-pro'>{news.name}</p>
+                                <p className='text-xl font-semibold text-black font-mark-pro '>{news.name}</p>
                                 <p>{news.title}</p>
                             </div>
                             <p className='text-sm'>{news.date}</p>

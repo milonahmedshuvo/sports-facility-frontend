@@ -5,9 +5,9 @@ import { FaBriefcase, FaGraduationCap, FaUniversity, FaVoicemail } from 'react-i
 
 const Timeline = () => {
   return (
-    <div className="bg-gray-100 pt-20">
-      <h2 className="text-3xl uppercase text-center font-bold text-gray-800 mb-4">Your Gateway to Seamless Sports Facility Reservations</h2>
-      <p className='text-center w-full lg:w-2/3 mx-auto mb-12'>SportBooking is a user-friendly platform designed to simplify the process of reserving sports facilities. Whether you're looking to book a football field, tennis court, or basketball arena, SportBooking offers an intuitive interface for finding available venues, comparing prices, and making hassle-free bookings. Ideal for athletes, sports enthusiasts, and event organizers, it ensures you never miss an opportunity to play at your preferred location.</p>
+    <div className="pt-20">
+      <h2 className="text-3xl uppercase text-center font-bold text-white mb-4">Your Gateway to Seamless Sports Facility Reservations</h2>
+      <p className='text-center text-text w-full lg:w-2/3 mx-auto mb-12'>SportBooking is a user-friendly platform designed to simplify the process of reserving sports facilities. Whether you're looking to book a football field, tennis court, or basketball arena, SportBooking offers an intuitive interface for finding available venues, comparing prices, and making hassle-free bookings. Ideal for athletes, sports enthusiasts, and event organizers, it ensures you never miss an opportunity to play at your preferred location.</p>
 
 
 

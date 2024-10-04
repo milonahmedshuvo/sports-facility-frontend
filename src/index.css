@@ -4,6 +4,18 @@
 
 
 
+body{
+  background: #121212;
+  color: white;
+}
+
+
+.bgRemove {
+  background: transparent !important;
+
+}
+
+
 .testimonial-slider {
   max-width: 800px;
   margin: 0 auto;

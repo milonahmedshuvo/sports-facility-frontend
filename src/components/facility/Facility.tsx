@@ -38,7 +38,7 @@ const Facility = () => {
                     <div className="border-b-2 border-black pb-4">
                         <img src={item.image} alt="" />
                         <p className="text-lg font-semibold my-2">{item.name}</p>
-                        <p className="text-md">{item.description.length > 40 ? `${item.description.substring(0, 105)}...` : `${item.description}` } </p>
+                        <p className="text-md text-text">{item.description.length > 40 ? `${item.description.substring(0, 105)}...` : `${item.description}` } </p>
                     </div>
                 ))
             }

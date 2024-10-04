@@ -42,9 +42,9 @@ const TestimonialSlider: React.FC = () => {
           
                 <img  className='w-32 h-32 mx-auto rounded-full' src={testimonial.image} alt="" />
            
-                <h4 className='mt-2 text-lg'>{testimonial.name}</h4>
+                <h4 className='mt-2 text-lg font-mark-pro'>{testimonial.name}</h4>
                 <span>{new Date(testimonial.date).toLocaleDateString()}</span>
-            <p className='w-full mx-auto mt-1 text-xl text-black font-semibold'>{testimonial.feedback}</p>
+            <p className='w-full mx-auto mt-1 text-xl text-black font-semibold '>{testimonial.feedback}</p>
             
           </div>
         ))}
