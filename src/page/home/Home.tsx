@@ -6,6 +6,7 @@
 // import NextEvent from "../../components/watchEvent/NextEvent"
 // import WatchEvent from "../../components/watchEvent/WatchEvent"
 import Banner from "../../homeComponents/banner/Banner"
+import Count from "../../homeComponents/count/Count"
 // import Howitwork from "../howitwork/Howitwork"
 // import SportsNews from "../sportsnews/SportsNews"
 
@@ -15,6 +16,7 @@ const Home = () => {
     <div>
 
     <Banner/>
+    <Count/>
 
 
 
