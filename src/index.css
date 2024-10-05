@@ -9,6 +9,17 @@ body{
   color: white;
 }
 
+.text-shadow {
+  text-shadow: 
+    1px 1px #ff4960,  /* Bottom-right */
+    -1px -1px #ff4960, /* Top-left */
+    -1px 1px #ff4960,  /* Bottom-left */
+    1px -1px #ff4960;  /* Top-right */
+}
+
+
+
+
 
 .bgRemove {
   background: transparent !important;
