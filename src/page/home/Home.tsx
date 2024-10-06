@@ -1,16 +1,3 @@
-// import BannerSection from "../../components/banner/BannerSection"
-// import Card from "../../components/card/Card"
-// import Facility from "../../components/facility/Facility"
-// import TestimonialSlider from "../../components/testimonialSlider/TestimonialSlider"
-// import Timeline from "../../components/timeline/TimeLine"
-// import NextEvent from "../../components/watchEvent/NextEvent"
-// import WatchEvent from "../../components/watchEvent/WatchEvent"
-// import Card from "../../components/card/Card"
-// import Facility from "../../components/facility/Facility"
-// import TestimonialSlider from "../../components/testimonialSlider/TestimonialSlider"
-// import Timeline from "../../components/timeline/TimeLine"
-// import NextEvent from "../../components/watchEvent/NextEvent"
-
 import Banner from "../../homeComponents/banner/Banner"
 import Client from "../../homeComponents/client/Client"
 import Count from "../../homeComponents/count/Count"
@@ -20,8 +7,7 @@ import RunningBenifit from "../../homeComponents/runningBenifit/RunningBenifit"
 import RunningGoal from "../../homeComponents/runningoal/RunningGoal"
 import Teams from "../../homeComponents/teammember/Team"
 import Upcomming from "../../homeComponents/upcomming/Upcomming"
-// import Howitwork from "../howitwork/Howitwork"
-// import SportsNews from "../sportsnews/SportsNews"
+
 
 
 const Home = () => {
