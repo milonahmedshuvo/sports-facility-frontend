@@ -16,6 +16,7 @@ import Client from "../../homeComponents/client/Client"
 import Count from "../../homeComponents/count/Count"
 import Running from "../../homeComponents/running/Running"
 import RunningBenifit from "../../homeComponents/runningBenifit/RunningBenifit"
+import RunningGoal from "../../homeComponents/runningoal/RunningGoal"
 import Teams from "../../homeComponents/teammember/Team"
 import Upcomming from "../../homeComponents/upcomming/Upcomming"
 // import Howitwork from "../howitwork/Howitwork"
@@ -34,6 +35,7 @@ const Home = () => {
 
     <Teams/> 
     <Client/>
+    <RunningGoal/>
 
 
     {/* <Card></Card> 
