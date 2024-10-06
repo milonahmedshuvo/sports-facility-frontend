@@ -5,9 +5,18 @@
 // import Timeline from "../../components/timeline/TimeLine"
 // import NextEvent from "../../components/watchEvent/NextEvent"
 // import WatchEvent from "../../components/watchEvent/WatchEvent"
+// import Card from "../../components/card/Card"
+// import Facility from "../../components/facility/Facility"
+// import TestimonialSlider from "../../components/testimonialSlider/TestimonialSlider"
+// import Timeline from "../../components/timeline/TimeLine"
+// import NextEvent from "../../components/watchEvent/NextEvent"
+
 import Banner from "../../homeComponents/banner/Banner"
 import Count from "../../homeComponents/count/Count"
-import Running from "../../homeComponents/running/running"
+import Running from "../../homeComponents/running/Running"
+import RunningBenifit from "../../homeComponents/runningBenifit/RunningBenifit"
+import Teams from "../../homeComponents/teammember/Team"
+import Upcomming from "../../homeComponents/upcomming/Upcomming"
 // import Howitwork from "../howitwork/Howitwork"
 // import SportsNews from "../sportsnews/SportsNews"
 
@@ -17,9 +26,20 @@ const Home = () => {
     <div>
 
     <Banner/>
-    <Count/>
+     <Count/>
     <Running/>
+    <RunningBenifit/>
+    <Upcomming/>
 
+    <Teams/> 
+
+
+
+    {/* <Card></Card> 
+    <Facility />
+    <Timeline></Timeline>
+    <NextEvent></NextEvent>
+    <TestimonialSlider/> */}
 
 
 

@@ -1,7 +1,8 @@
-import signin from '../../image/signin.png'
+import signin from '../../image/water.jpeg'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useUserLoginMutation } from '../../redux/api/user'
 import toast from 'react-hot-toast'
+import { Link } from 'react-router-dom'
 
 type Inputs = {
 
@@ -52,11 +53,13 @@ const LoginPage = () => {
 
 
   return (
-    <div className='flex flex-col md:flex-row justify-center md:gap-5 lg:gap-40  items-center h-screen '>
+    <div className='flex md:flex-row justify-center items-center h-screen bg-cover bg-center '
+    style={{ backgroundImage: `url(${signin})` }}
+    >
 
-      <div>
-        <img src={signin} alt="" />
-      </div>
+      {/* <div className='mt-32 w-full border'>
+        <img className='w-full' src={signin} alt="" />
+      </div> */}
 
       {/* create from here ...........  */}
 
@@ -128,7 +131,7 @@ const LoginPage = () => {
 
 
 
-
+        <p className='mt-3 text-text' >Create new an account? <Link to='/register'> <span className='text-[#00A7F9] font-semibold'>Register</span></Link> </p>
 
 
       </div>

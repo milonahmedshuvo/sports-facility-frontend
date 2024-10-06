@@ -42,8 +42,8 @@ const FacilityListingPage = () => {
         }
      
     return (
-        <div className='mb-24'>
-            <form action="" onSubmit={handleSubmit(onSubmit)} className='flex items-center ml-10 my-10'>
+        <div className='mb-24 pt-24'>
+            <form action="" onSubmit={handleSubmit(onSubmit)} className='flex items-center ml-10 mb-14 '>
                 <div className="relative flex  items-center ml-2  ">
 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 w-5 h-5 text-gray-500 absolute left-3">
@@ -60,7 +60,7 @@ const FacilityListingPage = () => {
 
                 </div>
 
-                <button className='btn btn-sm uppercase font-semibold ml-10 bg-red-600 hover:bg-red-600 hover:text-white text-white py-2'>Search</button>
+                <button className='btn btn-sm uppercase font-semibold ml-10 bg-secondary hover:bg-secondary hover:text-white text-white  border-secondary'>Search</button>
 
             </form>
 
@@ -72,7 +72,7 @@ const FacilityListingPage = () => {
                         <p>Location: {item.location}</p>
                         <p>price: {item.pricePerHour}</p>
                         <Link to={`/dashbord/datails/${item._id}`} >
-                        <button className=' mt-3 btn btn-sm uppercase font-semibold bg-red-600 hover:bg-red-600 hover:text-white text-white w-full'>View Details</button>
+                        <button className=' mt-3 btn btn-sm uppercase font-semibold bg-secondary hover:bg-secondary border-secondary hover:text-white text-white w-full'>View Details</button>
                         </Link>
                         
                     </div>)

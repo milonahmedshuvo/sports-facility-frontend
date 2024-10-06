@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import signup from '../../image/signup.png'
+import signup from '../../image/water.jpeg'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useUserRegisterMutation } from '../../redux/api/user';
 import toast from 'react-hot-toast';
@@ -68,17 +68,19 @@ const Register = () => {
 
 
   return (
-    <div className='flex flex-col md:flex-row justify-center md:gap-5 lg:gap-40  items-center h-screen '>
+    <div className=' pb-44  text-white flex flex-row justify-center items-center  bg-cover bg-center  '
+    style={{backgroundImage: `url(${signup})`}}
+    >
 
-      <div>
+      {/* <div>
         <img src={signup} alt="" />
-      </div>
+      </div> */}
 
       {/* create from here ...........  */}
 
-      <div>
-        <p className='text-3xl text-[#FF004C] font-semibold '>Save Your Account Now</p>
-        <span>please sheare your information in form </span>
+      <div className='mt-32  '>
+        <p className='text-3xl text-[#00A7F9] font-semibold '>Save Your Account Now</p>
+        <span className='text-text'>please sheare your information in form </span>
 
 
 
@@ -196,13 +198,13 @@ const Register = () => {
 
           {errors.name && <span>This field is  required </span>}
 
-          <input type="submit" className='bg-[#FF004C] text-white py-2 px-6 w-1/2 font-semibold' />
+          <input type="submit" className='bg-[#00A7F9] text-white py-2 px-6 w-1/2 font-semibold' />
         </form>
 
 
 
 
-        <p className='mt-10'>Already have an account? <Link to='/login'> <span className='text-[#FF004C] font-semibold'>Login</span></Link> </p>
+        <p className='mt-3 text-text' >Already have an account? <Link to='/login'> <span className='text-[#00A7F9] font-semibold'>Login</span></Link> </p>
 
 
 

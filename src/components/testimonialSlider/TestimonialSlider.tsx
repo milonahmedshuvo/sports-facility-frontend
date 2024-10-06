@@ -44,7 +44,7 @@ const TestimonialSlider: React.FC = () => {
            
                 <h4 className='mt-2 text-lg font-mark-pro'>{testimonial.name}</h4>
                 <span>{new Date(testimonial.date).toLocaleDateString()}</span>
-            <p className='w-full mx-auto mt-1 text-xl text-black font-semibold '>{testimonial.feedback}</p>
+            <p className='w-full mx-auto mt-1 text-xl text-white font-semibold '>{testimonial.feedback}</p>
             
           </div>
         ))}

@@ -25,7 +25,7 @@ const Facility = () => {
     ]
 
     return (
-        <div className="mt-20 mb-10 mx-0 md:mx-10 ">
+        <div className="mt-32 mb-10 mx-0 md:mx-10 ">
             
 
             <div className="mb-10 ">

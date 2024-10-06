@@ -4,7 +4,7 @@ import img3 from '../../image/team.jpg'
 
 const Card = () => {
     return (
-        <div className=' mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
+        <div className=' mx-10 mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
 
             <div
                 className="bg-cover bg-center h-[500px] relative"

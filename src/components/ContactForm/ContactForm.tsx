@@ -1,6 +1,6 @@
 
 import { useForm, SubmitHandler } from "react-hook-form"
-
+import water from '../../image/water.jpeg'
 
 
 
@@ -67,15 +67,17 @@ const ContactForm = () => {
 
 
   return (
-    <div className='flex justify-center mt-10'>
+    <div className='flex justify-center bg-cover bg-center pb-36 '
+    style={{backgroundImage: `url(${water})`}}
+    >
 
       
 
      
 
-      <div>
+      <div className="mt-24">
         <p className='text-3xl text-[#3B94E9] font-semibold '>Our Contack Now</p>
-        <span className='text-black'>please sheare your information in form </span>
+        <span className='text-text'>please sheare your information in form </span>
 
 
 
