@@ -7,7 +7,7 @@ const Count = () => {
             <motion.div className=" w-full md:w-[30%]"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.4 }}
             >
                 <p className="text-text text-[18px] font-[500] loading-3 font-inter">Our commitment to excellence has led to these impressive figures that showcase our dedication, hard work, and the value we bring to our customers.</p>
             </motion.div>
@@ -19,7 +19,7 @@ const Count = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 80 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }} >
+                    transition={{ duration: 0.4 }} >
                     <h1 className="text-secondary text-[54px] md:text-[64px] font-bold font-inter">785+</h1>
                     <p className="text-text text-[18px] font-inter">Kilometers Run</p>
                 </motion.div>
@@ -27,7 +27,7 @@ const Count = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 80 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.4 }}
                 >
                     <h1 className="text-secondary text-[54px] md:text-[64px] font-bold font-inter">145+</h1>
                     <p className="text-text text-[18px] font-inter">Location</p>
@@ -37,7 +37,7 @@ const Count = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 80 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.4 }}
                 >
                     <h1 className="text-secondary text-[54px] md:text-[64px] font-bold font-inter">3,5K</h1>
                     <p className="text-text text-[18px] font-inter">Runners</p>

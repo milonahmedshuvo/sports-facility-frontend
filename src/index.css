@@ -17,6 +17,9 @@ body{
     1px -1px #ff4960;  /* Top-right */
 }
 
+.cart-shadow {
+  box-shadow: 0px 20px  40px red inset;
+}
 
 
 

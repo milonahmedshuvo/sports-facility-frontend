@@ -33,7 +33,7 @@ const RunningBenifit = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.6 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             className="flex justify-center md:justify-end items-center gap-7 mb-12">
             <div>
               <h1 className="font-inter text-end text-xl text-white font-bold mb-3">Personal Growth</h1>
@@ -47,7 +47,7 @@ const RunningBenifit = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.6 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             className="flex justify-center md:justify-end items-center gap-7">
             <div>
               <h1 className="font-inter text-end text-xl text-white font-bold mb-3">Personal Growth</h1>
@@ -91,7 +91,7 @@ const RunningBenifit = () => {
           <motion.div
            initial={{ opacity: 0, x: 20 }}
            whileInView={{ opacity: 1, x: 0 }}
-           transition={{ duration: 0.4, delay: 0.6 }}
+           transition={{ duration: 0.4, delay: 0.3 }}
           className="flex justify-start items-center gap-7 mb-12">
             <h1 className="text-6xl text-secondary font-inter font-bold">03</h1>
             <div>
@@ -104,7 +104,7 @@ const RunningBenifit = () => {
           <motion.div
            initial={{ opacity: 0, x: 20 }}
            whileInView={{ opacity: 1, x: 0 }}
-           transition={{ duration: 0.4, delay: 0.6 }}
+           transition={{ duration: 0.4, delay: 0.3 }}
           className="flex justify-start items-center gap-7 mb-12">
             <h1 className="text-6xl text-secondary font-inter font-bold">04</h1>
             <div>

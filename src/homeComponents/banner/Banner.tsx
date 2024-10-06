@@ -24,7 +24,7 @@ const Banner = () => {
                     className="text-[80px] font-[700] font-inter"
                     initial={{ opacity: 0, y: 50 }} 
                     whileInView={{ opacity: 1, y: 0 }} 
-                    transition={{ duration: 0.8 }} 
+                    transition={{ duration: 0.4 }} 
                 >
                     Run with Passion
                 </motion.h1>
@@ -33,7 +33,7 @@ const Banner = () => {
                     className="text-[80px] font-[700] font-inter leading-[76px]"
                     initial={{ opacity: 0, y: 50 }} 
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }} 
+                    transition={{ duration: 0.4, delay: 0.2 }} 
                 >
                     and Purpose
                 </motion.h1>
@@ -42,7 +42,7 @@ const Banner = () => {
                     className="text-text text-[22px] w-[500px] mt-7"
                     initial={{ opacity: 0, y: 30 }} 
                     whileInView={{ opacity: 1, y: 0 }}  
-                    transition={{ duration: 0.8, delay: 0.4 }} 
+                    transition={{ duration: 0.4, delay: 0.2 }} 
                 >
                     Lace-up your shoes, set your goals, and let's run together towards a
                     healthier, happier, and faster you.
@@ -52,7 +52,7 @@ const Banner = () => {
                     className="uppercase text-white bg-secondary mt-7 px-8 rounded py-3 font-semibold"
                     initial={{ opacity: 0, y: 30 }} // Start state
                     whileInView={{ opacity: 1, y: 0 }} // End state when in view
-                    transition={{ duration: 0.8, delay: 0.6 }} // Delay for staggered animation
+                    transition={{ duration: 0.4, delay: 0.4 }} // Delay for staggered animation
                 >
                     let!s run
                 </motion.button>

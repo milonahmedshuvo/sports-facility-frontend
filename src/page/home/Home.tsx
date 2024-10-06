@@ -14,6 +14,7 @@
 import Banner from "../../homeComponents/banner/Banner"
 import Client from "../../homeComponents/client/Client"
 import Count from "../../homeComponents/count/Count"
+import LatestNews from "../../homeComponents/latestnews/LatestNews"
 import Running from "../../homeComponents/running/Running"
 import RunningBenifit from "../../homeComponents/runningBenifit/RunningBenifit"
 import RunningGoal from "../../homeComponents/runningoal/RunningGoal"
@@ -36,6 +37,11 @@ const Home = () => {
     <Teams/> 
     <Client/>
     <RunningGoal/>
+    <LatestNews/>
+
+
+
+
 
 
     {/* <Card></Card> 

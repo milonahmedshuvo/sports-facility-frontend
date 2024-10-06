@@ -16,7 +16,7 @@ const Upcomming = () => {
       <motion.div
        initial={{ opacity: 0, y: 20 }}
        whileInView={{ opacity: 1, y: 0 }}
-       transition={{ duration: 0.4, delay: 0.6 }} 
+       transition={{ duration: 0.4, delay: 0.3 }} 
       className='flex flex-col md:flex-row  shadow-2xl mb-10 '>
 
         <div>
@@ -84,7 +84,7 @@ const Upcomming = () => {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.6 }} 
+        transition={{ duration: 0.4, delay: 0.3 }} 
       className='flex flex-col md:flex-row shadow-2xl '>
 
         <div>
@@ -156,7 +156,7 @@ const Upcomming = () => {
         className="uppercase text-white bg-secondary mt-12 w-full md:w-[300px] mx-auto mb-10 px-8 rounded py-3 font-semibold"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.6 }} 
+        transition={{ duration: 0.4, delay: 0.2 }} 
       >
         let!s run
       </motion.button>

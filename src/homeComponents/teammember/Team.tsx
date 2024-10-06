@@ -50,7 +50,7 @@ const Teams = () => {
       <motion.h1
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4, delay: 0.6 }}
+        transition={{ duration: 0.4, delay: 0.3 }}
         className=" text-[35px] md:text-[45px] lg:text-[56px] font-inter font-bold mb-8">Our professional trainers</motion.h1>
 
 
@@ -60,7 +60,7 @@ const Teams = () => {
           teams.map((item, i) => <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.6 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             key={i} className=" bg-[#202020] ">
 
 
