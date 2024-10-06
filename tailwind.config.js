@@ -9,7 +9,8 @@ export default {
       colors: {
         primary: "#0F1021",
         secondary: "#ff4960",
-        text: "#c1c1c1"
+        text: "#c1c1c1",
+        cartBG: '#202020'
       },
       fontFamily: {
         'mark-pro': ['Mark Pro',],

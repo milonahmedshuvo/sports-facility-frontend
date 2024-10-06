@@ -12,6 +12,7 @@
 // import NextEvent from "../../components/watchEvent/NextEvent"
 
 import Banner from "../../homeComponents/banner/Banner"
+import Client from "../../homeComponents/client/Client"
 import Count from "../../homeComponents/count/Count"
 import Running from "../../homeComponents/running/Running"
 import RunningBenifit from "../../homeComponents/runningBenifit/RunningBenifit"
@@ -32,7 +33,7 @@ const Home = () => {
     <Upcomming/>
 
     <Teams/> 
-
+    <Client/>
 
 
     {/* <Card></Card> 

@@ -1,18 +1,43 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 // import logo from '../../image/sports.webp'
 import logo from '../../image/logonews.svg';
 
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [background, setBackground] = useState(false)
+
+
+  const handleScroll = () => {
+    if (window.scrollY > 70) {
+      setBackground(true);
+    } else {
+      setBackground(false);
+    }
+  };
+
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll); 
+    };
+  }, []);
+
+
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-10 bg-transparent pt-2">
-      <div className="bgRemove text-white flex md:items-center justify-between py-4 px-8">
+    <div className={` ${ background? 'bg-[#121212]' :'bg-transparent' }  fixed top-0 left-0 w-full z-10  py-2`}>
+
+
+
+      <div className="bgRemove text-white flex md:items-center justify-between py-4 px-8 ">
 
         {/* Logo */}
         <div className="w-full md:w-1/6">
