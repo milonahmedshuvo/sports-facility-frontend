@@ -16,6 +16,7 @@ import BookingPage from "../page/bookingPage/BookingPage";
 import UserBooking from "../components/Dashbord/user/userbooking/userBooking";
 import AllBooking from "../components/Dashbord/admin/AllBooking";
 import ErrorPage from "../sheared/ErrorPage";
+import Manage from "../components/Dashbord/user/manage/manage";
 
 
 
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashbord/user-booking',
                 element: <UserBooking/>
+            },
+            {
+                path: '/dashbord/manage',
+                element: <Manage/>
             },
             // admin routes 
             {
