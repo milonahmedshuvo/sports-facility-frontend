@@ -15,7 +15,7 @@ console.log("user:", data)
       <DashbordNavber />
       
       {/* main dashbord page  */}
-      <div className="w-full flex bg-[#111827] ">
+      <div className="w-full  flex bg-[#111827] ">
 
         <div className="leftSite border border-[#596786]  w-full lg:w-1/5 pl-5 pr-5">
 
@@ -164,7 +164,7 @@ console.log("user:", data)
         {/*+++++++++++++++ Dashbord right site and content start ******************/}
 
 
-        <div className="rightSiteContent border border-t border-l-0 border-[#596786]  w-4/5 bg-[#111827] h-screen">
+        <div className="rightSiteContent border border-t border-l-0 border-[#596786]  w-4/5 bg-[#111827] h-full">
           
           {/* <p className="text-white">content</p> */}
 

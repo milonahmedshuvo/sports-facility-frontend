@@ -10,7 +10,7 @@ const UserInfo = () => {
 
 
   return (
-    <div className="">
+    <div className="pb-80">
 
 
       <div className='bg-cover bg-center w-full h-[200px] relative' style={{ backgroundImage: `url(${backgroundImg})` }} >
