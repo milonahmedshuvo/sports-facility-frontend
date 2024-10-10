@@ -22,25 +22,20 @@ type Inputs = {
 
 const FacilityListingPage = () => {
     const { data, isLoading } = useGetAllFacilityQuery(undefined)
-    const {
-        register,
-        handleSubmit,
-        // formState: { errors },
-        // reset
-      } = useForm<Inputs>()
-   
+    const {register, handleSubmit } = useForm<Inputs>()
 
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
-
         console.log(data)
     }
-
-
-        if(isLoading){
+     if(isLoading){
             return <Spinner/>
         }
      
+
+
+console.log("facility data;", data)
+
     return (
         <div className='mb-24 pt-24'>
             <form action="" onSubmit={handleSubmit(onSubmit)} className='flex items-center ml-10 mb-14 '>
@@ -64,9 +59,9 @@ const FacilityListingPage = () => {
 
             </form>
 
-            <div className='flex flex-col md:flex-row justify-around'>
+            <div className='grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20'>
                 {
-                    data?.data?.map((item: TFacility) => <div key={item._id}>
+                    data?.data?.map((item: TFacility) => <div key={item._id} className='' >
                         <img className='h-[200px]' src={item.image} alt="" />
                         <p className='text-xl'>{item.name}</p>
                         <p>Location: {item.location}</p>

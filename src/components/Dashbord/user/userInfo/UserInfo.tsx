@@ -50,8 +50,8 @@ const UserInfo = () => {
 
 
       <div className='mt-24 mx-10'>
-        <h4 className='text-xl my-2'>About me</h4>
-        <p>I'm Milon Ahmed Shuvo, a passionate and detail-oriented Frontend Developer with expertise in building dynamic and responsive web applications. I specialize in creating clean, efficient, and scalable solutions using HTML, CSS, JavaScript, and TypeScript. I have extensive experience with modern frontend frameworks and libraries like React.js, Next.js, and Redux. With a solid foundation in Node.js, Express, MongoDB, and Mongoose, I enjoy working on full-stack applications, particularly with the MERN stack. I am constantly learning and applying the latest trends in web development to ensure top-tier user experiences. I love collaborating with teams, tackling complex problems, and turning ideas into seamless digital products.</p>
+        <h4 className='text-2xl mt-2 mb-4'>About me</h4>
+        <p className=''>I'm Milon Ahmed Shuvo, a passionate and detail-oriented Frontend Developer with expertise in building dynamic and responsive web applications. I specialize in creating clean, efficient, and scalable solutions using HTML, CSS, JavaScript, and TypeScript. I have extensive experience with modern frontend frameworks and libraries like React.js, Next.js, and Redux. With a solid foundation in Node.js, Express, MongoDB, and Mongoose, I enjoy working on full-stack applications, particularly with the MERN stack. I am constantly learning and applying the latest trends in web development to ensure top-tier user experiences. I love collaborating with teams, tackling complex problems, and turning ideas into seamless digital products.</p>
       </div>
 
     </div>

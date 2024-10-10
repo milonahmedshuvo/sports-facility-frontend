@@ -24,7 +24,10 @@ const Register = () => {
     reset
   } = useForm<Inputs>({ defaultValues: { role: 'user' } })
   
-  const [ userRegister, { data, isError, isSuccess } ] = useUserRegisterMutation(undefined)
+  const [ userRegister, { data, error, isError, isSuccess } ] = useUserRegisterMutation(undefined)
+
+
+    
 
 
   if(isError){
@@ -59,6 +62,9 @@ const Register = () => {
     reset()
   }
 
+
+  console.log('user register:', data)
+  console.log('user register error:', error)
 
 
 
@@ -97,7 +103,7 @@ const Register = () => {
 
             <input
               type="text"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full"
+              className="pl-10 pr-10 py-2 text-black border-b-2 rounded-md focus:outline-none w-full"
               placeholder="name"
               {...register("name", { required: true })}
             />
@@ -116,7 +122,7 @@ const Register = () => {
 
             <input
               type="email"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-2 text-black border-b-2 rounded-md focus:outline-none w-full "
               placeholder="email"
               {...register("email", { required: true })}
             />
@@ -133,7 +139,7 @@ const Register = () => {
 
             <input
               type="password"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-2 text-black border-b-2 rounded-md focus:outline-none w-full "
               placeholder="password"
               {...register("password", { required: true })}
             />
@@ -151,7 +157,7 @@ const Register = () => {
 
             <input
               type="text"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-2 text-black  border-b-2 rounded-md focus:outline-none w-full "
               placeholder="phone"
               {...register("phone", { required: true })}
             />
@@ -168,7 +174,7 @@ const Register = () => {
 
             <input
               type="text"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-2 text-black  border-b-2 rounded-md focus:outline-none w-full "
               placeholder="role"
               {...register("role")}
             />
@@ -188,7 +194,7 @@ const Register = () => {
 
             <input
               type="text"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-2 text-black border-b-2 rounded-md focus:outline-none w-full "
               placeholder="address"
               {...register("address", { required: true })}
             />
@@ -198,7 +204,7 @@ const Register = () => {
 
           {errors.name && <span>This field is  required </span>}
 
-          <input type="submit" className='bg-[#00A7F9] text-white py-2 px-6 w-1/2 font-semibold' />
+          <input type="submit" className='bg-[#00A7F9] text-white py-2 px-6 w-full rounded font-semibold' />
         </form>
 
 

@@ -103,21 +103,21 @@ const BookingPage = () => {
 
 
   return (
-    <div className="flex justify-between my-16">
-      <div className="text-white w-1/3 mx-auto border-b-2 pb-4">
+    <div className="flex justify-between">
+      <div className="text-white w-1/3 mx-auto border-b-2 pb-4 pt-32">
         <div className=''>
 
           <img className="h-[200px] w-full" src={booking?.data?.image} alt="" />
-          <p className="text-xl font-semibold text-black my-1"> {booking?.data?.name} </p>
-          <p className="text-black"> {booking?.data?.description} </p>
-          <p className="text-black">Price: $ {booking?.data?.pricePerHour} </p>
-          <p className="text-black">Location:  {booking?.data?.location} </p>
+          <p className="text-xl font-semibold text-white my-1"> {booking?.data?.name} </p>
+          <p className="text-white"> {booking?.data?.description} </p>
+          <p className="text-white">Price: $ {booking?.data?.pricePerHour} </p>
+          <p className="text-white">Location:  {booking?.data?.location} </p>
 
         </div>
       </div>
 
 
-      <div className="w-1/2">
+      <div className="w-1/2 pt-32">
         <form action="" className="flex gap-3" onSubmit={handleSubmitDate(onSubmitDate)} >
 
           <input type="text" placeholder="YYYY-MM-DD" {...registerDate("date")} className="w-1/2 border py-3 px-5" />

@@ -2,10 +2,9 @@ import signin from '../../image/water.jpeg'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useUserLoginMutation } from '../../redux/api/user'
 import toast from 'react-hot-toast'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 type Inputs = {
-
   email: string,
   password: string,
 
@@ -33,7 +32,7 @@ const LoginPage = () => {
     localStorage.setItem('accessToken', data.data.accessToken)
   }
 
-
+  const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     // console.log(data)
@@ -41,9 +40,14 @@ const LoginPage = () => {
       data: data
     })
 
+
     reset()
+
   }
 
+  if(isSuccess){
+    navigate('/dashbord');
+  }
 
 
 
@@ -63,22 +67,23 @@ const LoginPage = () => {
 
       {/* create from here ...........  */}
 
-      <div>
-        <p className='text-3xl text-[#00A7F9] font-semibold '>Save Your Account Now</p>
-        <span>please sheare your information in form </span>
+      <div className='backdrop-blur-sm bg-white/30 w-full md:w-1/3 px-20 py-10'>
+
+
+        <p className='text-gray-800 text-2xl font-semibold '>Save Your Account Now</p>
+        <span className='text-md text-gray-800'>please sheare your information in form </span>
+
+
+        <div className='my-10'>
+        <p className='text-md text-gray-800'>Email: user@example.com</p>
+        <p className='text-md text-gray-800'>password: 12345</p>
+        </div>
 
 
 
         <form onSubmit={handleSubmit(onSubmit)} className='mt-10'>
 
-
-
-
-
-
-
           {/* email filed  */}
-
           <div className="relative flex items-center my-6">
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 w-5 h-5 text-gray-500 absolute left-3">
@@ -88,7 +93,7 @@ const LoginPage = () => {
 
             <input
               type="email"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-2 text-black border-b-2 rounded-md focus:outline-none w-full "
               placeholder="email"
               {...register("email", { required: true })}
             />
@@ -105,33 +110,20 @@ const LoginPage = () => {
 
             <input
               type="password"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-2 text-black  border-b-2 rounded-md focus:outline-none w-full "
               placeholder="password"
               {...register("password", { required: true })}
             />
           </div>
 
 
-
-
-
-
-
-
-
-
-
           {errors.email && <p className='font-bold text-red-600'>  This field is email required </p>}
           {errors.password && <p className='font-bold text-red-600'> This field is password required </p>}
 
-          <input type="submit" className='bg-[#00A7F9] text-white py-2 px-6 w-1/2 font-semibold mt-4' />
+          <input type="submit" className='bg-blue-500 text-white py-2 px-6 w-full rounded-md font-semibold mt-4' />
         </form>
 
-
-
-
-
-        <p className='mt-3 text-text' >Create new an account? <Link to='/register'> <span className='text-[#00A7F9] font-semibold'>Register</span></Link> </p>
+        <p className='mt-3 text-text' >Create new an account? <Link to='/register'> <span className='text-gray-700 font-semibold'>Register</span></Link> </p>
 
 
       </div>

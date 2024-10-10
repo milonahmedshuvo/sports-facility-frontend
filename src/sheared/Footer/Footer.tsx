@@ -17,11 +17,11 @@ const Footer = () => {
 
         <div className=' w-full lg:w-[70%] flex flex-col md:flex-row justify-between ml-10 '>
 
-          <div className=' w-[30%] flex flex-col items-center  my-10 lg:my-0 '>
+          <div className=' w-[30%] flex flex-col items-center justify-start  my-10 lg:my-0 '>
             <p className='text-xl font-inter text-white mt-2 '>about us</p>
-            <p className='text-xl font-inter text-white mt-2 ' >Coaches</p>
-            <p className='text-xl font-inter text-white mt-2 ' >Workouts</p>
-            <p className='text-xl font-inter text-white mt-2 ' >Contact Us</p>
+            <p className='text-md font-inter text-white mt-2 ' >Coaches</p>
+            <p className='text-md font-inter text-white mt-2 ' >Workouts</p>
+            <p className='text-md font-inter text-white mt-2 ' >Contact Us</p>
           </div>
 
           <div className=' w-full lg:w-[30%] my-8 lg:my-0 '>

@@ -17,6 +17,16 @@ import UserBooking from "../components/Dashbord/user/userbooking/userBooking";
 import AllBooking from "../components/Dashbord/admin/AllBooking";
 import ErrorPage from "../sheared/ErrorPage";
 import Manage from "../components/Dashbord/user/manage/manage";
+// import PrivateRoute from "../PrivateRoute/PrivateRoute";
+
+
+
+// const isAuthenticated = () => {
+//     const token = localStorage.getItem('accessToken'); 
+//     return !!token;
+//   };
+
+
 
 
 
@@ -65,6 +75,7 @@ export const router = createBrowserRouter([
     {
         path: '/dashbord',
         element: <DashbordPage/>,
+        // element: <PrivateRoute isAuthenticated={isAuthenticated()}/>,
         children: [
             {
                 path: '/dashbord',
