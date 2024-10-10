@@ -15,7 +15,7 @@ const UserInfo = () => {
 
       <div className='bg-cover bg-center w-full h-[200px] relative' style={{ backgroundImage: `url(${backgroundImg})` }} >
 
-        <div className='backdrop-blur-sm bg-white/30 h-[130px]  w-[1020px] rounded-lg absolute top-32  left-6 '>
+        <div className='backdrop-blur-sm bg-white/30 h-[130px]  w-full  lg:w-[1020px] rounded-lg absolute top-32  left-6 '>
           <div className='flex justify-between items-center h-full mx-10'>
             <div className='flex gap-3 items-center'>
               <div className=' '>

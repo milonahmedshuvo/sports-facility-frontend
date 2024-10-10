@@ -103,7 +103,7 @@ const BookingPage = () => {
 
 
   return (
-    <div className="flex justify-between">
+    <div className="flex  justify-between">
       <div className="text-white w-1/3 mx-auto border-b-2 pb-4 pt-32">
         <div className=''>
 
@@ -169,4 +169,4 @@ const BookingPage = () => {
   )
 }
 
-export default BookingPage
+export default BookingPage;

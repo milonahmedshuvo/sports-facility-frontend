@@ -59,7 +59,7 @@ const Manage = () => {
 
       <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mt-10">
 
-        <div className="h-[160px] bg-[#1F2937] flex items-center p-6 gap-4 w-1/2 rounded">
+        <div className="h-[160px] bg-[#1F2937] flex items-center p-6 gap-4 w-full lg:w-1/2 justify-between rounded">
           <div>
             <p className="text-xl font-inter">Welcome Back! Watson</p>
             <p className="text-[14px] text-[#738499]">You have completed 76% of your goal this</p>
@@ -73,7 +73,7 @@ const Manage = () => {
         </div>
 
 
-        <div className="h-[160px] bg-[#1A344E] flex justify-between items-center rounded p-4 gap-4 w-1/2">
+        <div className="h-[160px] bg-[#1A344E] flex justify-between items-center rounded p-4 gap-4 w-full lg:w-1/2">
 
           <div>
             <p className="text-xl text-white font-inter">Upgrade to <span className="uppercase text-blue-500 font-semibold">PRO </span> for</p>
@@ -92,10 +92,10 @@ const Manage = () => {
 
 
 
-      <div className="flex justify-between gap-8 mt-10">
+      <div className="flex flex-col lg:flex-row justify-between gap-8 mt-10">
 
 
-        <div className="container mx-auto p-30 w-1/2">
+        <div className="container mx-auto p-30 w-full lg:w-1/2">
           <h2 className="text-2xl font-bold mb-4 font-inter">Order Progress</h2>
           <ProgressBarTailwind name="GameBooker" percentage={90} />
           <ProgressBarTailwind name="PlayTime Hub" percentage={49} />
@@ -103,7 +103,7 @@ const Manage = () => {
           <ProgressBarTailwind name="CourtReserve" percentage={60} />
         </div>
 
-        <div className="w-1/2">
+        <div className=" w-full lg:w-1/2">
           <p className="text-white text-2xl font-bold mb-4 font-inter">Sels overview</p>
           <BarChart data={barChartData} options={barChartOptions} />
         </div>

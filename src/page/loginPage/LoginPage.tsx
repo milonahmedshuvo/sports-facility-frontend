@@ -57,7 +57,7 @@ const LoginPage = () => {
 
 
   return (
-    <div className='flex md:flex-row justify-center items-center h-screen bg-cover bg-center '
+    <div className='flex md:flex-row justify-center items-center py-44 bg-cover bg-center '
     style={{ backgroundImage: `url(${signin})` }}
     >
 
@@ -70,11 +70,11 @@ const LoginPage = () => {
       <div className='backdrop-blur-sm bg-white/30 w-full md:w-1/3 px-20 py-10'>
 
 
-        <p className='text-gray-800 text-2xl font-semibold '>Save Your Account Now</p>
-        <span className='text-md text-gray-800'>please sheare your information in form </span>
+        <p className='text-[#b9263a] text-2xl font-semibold '>Save Your Account Now</p>
+        <span className='text-md text-[#b9263a]'>please sheare your information in form </span>
 
 
-        <div className='my-10'>
+        <div className='my-4'>
         <p className='text-md text-gray-800'>Email: user@example.com</p>
         <p className='text-md text-gray-800'>password: 12345</p>
         </div>
@@ -120,7 +120,7 @@ const LoginPage = () => {
           {errors.email && <p className='font-bold text-red-600'>  This field is email required </p>}
           {errors.password && <p className='font-bold text-red-600'> This field is password required </p>}
 
-          <input type="submit" className='bg-blue-500 text-white py-2 px-6 w-full rounded-md font-semibold mt-4' />
+          <input type="submit" className='bg-[#b9263a] text-white py-2 px-6 w-full rounded-md font-semibold mt-4' />
         </form>
 
         <p className='mt-3 text-text' >Create new an account? <Link to='/register'> <span className='text-gray-700 font-semibold'>Register</span></Link> </p>
