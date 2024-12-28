@@ -8,11 +8,15 @@ import { useAuth } from '../../AuthContext/AuthContext';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [background, setBackground] = useState(false)
-  const location = useLocation();
-  
-    const path = location.pathname === '/contactusPage'
-    console.log({path})
 
+  const location = useLocation();
+  const dynamicDashboardPathPattern = /^\/dashbord\/datails\/[a-zA-Z0-9]+$/;
+    const path = location.pathname == '/contactusPage' ||  dynamicDashboardPathPattern.test(location.pathname)
+
+    
+
+
+    
   const auth = useAuth();
 
   console.log( 'user ase naki?', auth?.isAuthenticated)
