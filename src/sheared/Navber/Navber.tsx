@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // import logo from '../../image/sports.webp'
 import logo from '../../image/logonews.svg';
 import { useAuth } from '../../AuthContext/AuthContext';
@@ -8,7 +8,10 @@ import { useAuth } from '../../AuthContext/AuthContext';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [background, setBackground] = useState(false)
-
+  const location = useLocation();
+  
+    const path = location.pathname === '/contactusPage'
+    console.log({path})
 
   const auth = useAuth();
 
@@ -39,8 +42,10 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  // 'bg-transparent'
+
   return (
-    <div className={` ${ background? 'bg-[#121212]' :'bg-transparent' }  fixed top-0 left-0 w-full z-10  py-2`}>
+    <div className={` ${ background? 'bg-[#121212]' : path ? 'bg-[#121212]': 'bg-transparent' }  fixed top-0 left-0 w-full z-10  py-2`}>
 
 
 
@@ -65,34 +70,53 @@ const Navbar = () => {
         {/* Navbar Links */}
         <div className={`hidden md:block w-5/6 md:flex md:w-auto`}>
           <ul className="flex flex-col md:flex-row uppercase w-full gap-6 md:gap-8 justify-center md:justify-between items-center">
-            <li>
+            
+            
+               <li>
               <Link to="/" className="font-mark-pro text-md hover:text-[#ff4960] hover:underline">
                 Home
               </Link>
             </li>
-            <li>
+          
+
+
+           
+              <li>
               <Link to="/aboutus" className="font-mark-pro text-md hover:text-[#ff4960] hover:underline">
                 About Us
               </Link>
             </li>
-            <li>
+           
+
+
+            
+               <li>
               <Link to="/facilityListingPage" className="font-mark-pro text-md hover:text-[#ff4960] hover:underline">
                 Facility
               </Link>
             </li>
-            <li>
+            
+
+
+            
+               <li>
               <Link to="/contactusPage" className="font-mark-pro text-md hover:text-[#ff4960] hover:underline">
                 Contact
               </Link>
             </li>
+           
+
 
             {
-              auth?.isAuthenticated ? <li>
+             auth?.isAuthenticated ? <li>
               <Link to="/dashbord" className="font-mark-pro text-md hover:text-[#ff4960] hover:underline">
                 Dashboard
               </Link>
             </li> : ''
-            }            
+            } 
+
+            
+                       
             {
               auth?.isAuthenticated ? <li>
               {/* <Link to="/login"> */}

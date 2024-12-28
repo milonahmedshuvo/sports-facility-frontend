@@ -1,178 +1,158 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import axios from 'axios';
+import React, { useState, FormEvent } from 'react';
+import toast from 'react-hot-toast';
+import { useLocation } from 'react-router-dom';
 
-import { useForm, SubmitHandler } from "react-hook-form"
-import water from '../../image/water.jpeg'
-
-
-
-
-type Inputs = {
-  name: string,
-  email: string,
-  subject: string,
-  message: string,
+interface CourseData {
+  title: string;
+  description: string;
+  badge_text: string;
+  badge_color: string;
+  instructor_name: string;
 }
 
+const ContactForm: React.FC = () => {
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [badge_text, setBadge_text] = useState<string>("");
+  const [badge_color, setBadge_color] = useState<string>("");
+  const [instructor_name, setInstructor_name] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [data, setData] = useState<CourseData | null>(null);
+  const location = useLocation();
 
-const ContactForm = () => {
- 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset
-  } = useForm<Inputs>()
-  
- 
-
-
-  // if(isError){
-  //   toast.error('Admin Create Filed...!!')
-  //   console.log(error)
-  // }
-
-  // if(isSuccess){
-  //   toast.success('Admin Create Successfully...!!')
-  //   localStorage.setItem('accessToken', data.data.accessToken)
-  // }
-
-
-
-  
+  const path = location.pathname === '/contactusPage'
+  console.log({ path })
 
 
 
 
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
 
+    const token = localStorage.getItem('authToken');
 
+    try {
+      const response = await axios.post<CourseData>(
+        'https://react-interview.crd4lc.easypanel.host/api/course',
+        { title, description, badge_text, badge_color, instructor_name },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
-
-  
-
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-   console.log(data)
-     
-    // createAdmin({
-    //   data: data
-    // })
-
-    reset()
-  }
-
-
-
-
-
-
-
-
+      setData(response.data);
+      toast.success('Create Successful.');
+    } catch (err: any) {
+      if (err.response?.status === 422) {
+        toast.error('Invalid credentials login.');
+      } else {
+        toast.error('An error occurred. Please try again.');
+      }
+    } finally {
+      setLoading(false);
+      setTitle("");
+      setDescription("");
+      setBadge_text("");
+      setBadge_color("");
+      setInstructor_name("");
+    }
+  };
 
   return (
-    <div className='flex justify-center bg-cover bg-center pb-36 '
-    style={{backgroundImage: `url(${water})`}}
-    >
+    <div className='bg-white mt-32 pb-40'>
+      <p className='text-center text-[#4F5465] font-serif text-xl mt-10'>Please Add Your Data</p>
+      <h2 className='text-center text-[36px] text-[#1D1D1F] font-[700]'>You add to building data for business begins here.</h2>
+      <p className='text-center text-[20px] text-[#4F5465] font-[500]'>You have built your business week by week, year by year.</p>
+      <p className='text-center text-[20px] text-[#4F5465] font-[500]'>It's time for a marketing and sales strategy that works as hard as you do.</p>
 
-      
+      <div className="w-full flex justify-center items-center p-4">
+        <form className='w-full lg:w-5/6' onSubmit={handleSubmit}>
+          <div className='flex flex-col md:flex-row justify-between gap-4'>
+            <div className='mt-6 w-1/2'>
+              <label htmlFor='title' className='block text-sm font-medium text-gray-700 mb-1'>Title</label>
+              <input
+                type="text"
+                id='title'
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className="w-full px-4 py-3 text-[15px] border border-gray-400 rounded focus:outline-none"
+                placeholder="Enter your title"
+                required
+              />
+            </div>
 
-     
-
-      <div className="mt-24">
-        <p className='text-3xl text-[#3B94E9] font-semibold '>Our Contack Now</p>
-        <span className='text-text'>please sheare your information in form </span>
-
-
-
-        <form onSubmit={handleSubmit(onSubmit)} className='mt-10'>
-
-
-
-          <div className="relative flex items-center my-2">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 w-5 h-5 text-gray-500 absolute left-3">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-            </svg>
-
-
-            <input
-              type="text"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full"
-              placeholder="name"
-              {...register("name", { required: true })}
-            />
+            <div className='mt-6 w-1/2'>
+              <label htmlFor='instructor_name' className='block text-sm font-medium text-gray-700 mb-1'>Your Name</label>
+              <input
+                type="text"
+                id='instructor_name'
+                value={instructor_name}
+                onChange={(e) => setInstructor_name(e.target.value)}
+                className="w-full px-4 py-3 text-[15px] border border-gray-300 rounded focus:outline-none"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
           </div>
 
+          <div className='flex flex-col md:flex-row justify-between gap-4'>
+            <div className='mt-6 w-1/2'>
+              <label htmlFor='badge_text' className='block text-sm font-medium text-gray-700 mb-1'>Email</label>
+              <input
+                type="text"
+                id='badge_text'
+                value={badge_text}
+                onChange={(e) => setBadge_text(e.target.value)}
+                className="w-full px-4 py-3 text-[15px] border border-gray-400 rounded focus:outline-none"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
 
-
-          {/* email filed  */}
-
-          <div className="relative flex items-center my-6">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 w-5 h-5 text-gray-500 absolute left-3">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-            </svg>
-
-
-            <input
-              type="email"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
-              placeholder="email"
-              {...register("email", { required: true })}
-            />
+            <div className='mt-6 w-1/2'>
+              <label htmlFor='badge_color' className='block text-sm font-medium text-gray-700 mb-1'>Address</label>
+              <input
+                type="text"
+                id='badge_color'
+                value={badge_color}
+                onChange={(e) => setBadge_color(e.target.value)}
+                className="w-full px-4 py-3 text-[15px] border border-gray-400 rounded-lg focus:outline-none"
+                placeholder="Enter your address"
+                required
+              />
+            </div>
           </div>
 
-
-          {/* password filed  */}
-          <div className="relative flex items-center my-6">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 w-5 h-5 text-gray-500 absolute left-3">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
-            </svg>
-
-
-            <input
-              type="text"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
-              placeholder="subject"
-              {...register("subject", { required: true })}
-            />
+          <div className='mt-6'>
+            <label htmlFor='description' className='block text-sm font-medium text-gray-700 mb-1'>Description</label>
+            <textarea
+              id='description'
+              rows={3}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="w-full px-4 py-3 text-[15px] border border-gray-400 rounded focus:outline-none"
+              placeholder="Enter your description"
+              required
+            ></textarea>
           </div>
 
-
-
-
-          {/* phone filed  */}
-          <div className="relative flex items-center my-6">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 w-5 h-5 text-gray-500 absolute left-3">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" />
-            </svg>
-
-            <input
-              type="text"
-              className="pl-10 pr-10 py-2  border-b-2 rounded-md focus:outline-none w-full "
-              placeholder="message"
-              {...register("message", { required: true })}
-            />
-          </div>
-
-
-
-         
-       
-
-
-
-
-         
-
-          {errors.name && <span>This field is  required </span>}
-
-          <input type="submit" className='bg-[#3B94E9] text-white py-2 px-6 w-full font-semibold' />
+          <button
+            type='submit'
+            className='w-full bg-secondary text-white font-medium py-2 mt-8 rounded focus:ring-4 focus:bg-secondary'
+            disabled={loading}
+          >
+            {loading ? 'Loading...' : 'Submit'}
+          </button>
         </form>
-
       </div>
-
     </div>
-  )
-}
+  );
+};
 
 export default ContactForm;

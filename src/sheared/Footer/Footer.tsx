@@ -1,9 +1,11 @@
 import logo from '../../image/logonews.svg'
 
+
 const Footer = () => {
+  
 
   return (
-    <div className=' mt-32 pb-20 bg-black pt-32'>
+    <div className='pb-20 bg-black pt-32'>
 
 
       <div className='flex flex-col lg:flex-row mx-10 lg:mx-20 '>
