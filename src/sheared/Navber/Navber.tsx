@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const location = useLocation();
   const dynamicDashboardPathPattern = /^\/dashbord\/datails\/[a-zA-Z0-9]+$/;
-    const path = location.pathname == '/contactusPage' ||  dynamicDashboardPathPattern.test(location.pathname)
+    const path = location.pathname == '/contactusPage' ||  dynamicDashboardPathPattern.test(location.pathname) || '/facilityListingPage'
 
     
 
