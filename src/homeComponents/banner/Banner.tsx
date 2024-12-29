@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import bannerImg from "../../image/banner.webp"
+import { Link } from "react-router-dom";
 
 
 
@@ -48,6 +49,7 @@ const Banner = () => {
                     healthier, happier, and faster you.
                 </motion.p>
 
+                <Link to='/facilityListingPage' >
                 <motion.button
                     className="uppercase text-white bg-secondary mt-7 px-8 rounded py-3 font-semibold"
                     initial={{ opacity: 0, y: 30 }} // Start state
@@ -56,6 +58,7 @@ const Banner = () => {
                 >
                     let!s run
                 </motion.button>
+                </Link>
             </div>
 
         </div>

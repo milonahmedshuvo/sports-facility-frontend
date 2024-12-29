@@ -53,7 +53,7 @@ import { MdAssuredWorkload } from 'react-icons/md';
 import { VscKey } from 'react-icons/vsc';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 type TFacility = {
   data: {
     name: string;
@@ -96,13 +96,13 @@ const DatailsPage = () => {
 
 
   return (
-    <div className='px-6 mt-36 bg-white'>
+    <div className='px-6 mt-36 bg-white pb-32'>
 
       <div>
         <h1 className="text-xl md:text-3xl font-bold text-[#4F5465]"> {data?.data?.name} </h1>
         <div>
           <div className='flex mt-3 font-semibold mb-10'>
-            <p className=' font-extrabold mr-1 text-[#4F5465]'>★ </p>
+            <p className='mr-1 text-[#4F5465] text-xl'>Leicester vs Man City LIVE! Premier League match updates </p>
 
           </div>
 
@@ -142,24 +142,25 @@ const DatailsPage = () => {
 
       {/* Discription  */}
       <h1 className='text-[#4F5465] text-2xl font-semibold mt-12'> Discription & overview</h1>
-      <p className='text-[#4F5465] text-xl mt-10'> {data?.data?.description} </p>
-      <p className='text-[#4F5465] text-xl mt-10'> {data?.data?.description} </p>
-      <p className='text-[#4F5465] text-xl mt-10'> {data?.data?.description} </p>  
+      <p className='text-[#4F5465] text-xl mt-10'> Sport is generally recognised as system of activities based in physical athleticism or physical dexterity, with major competitions admitting only sports meeting this definition.Some organisations, such as the Council of Europe, preclude activities without any physical element from classification as sports. However, a number of competitive, but non-physical, activities claim recognition as mind sports. The International Olympic Committee who oversee the Olympic Games recognises both chess and bridge as sports. SportAccord, the international sports federation association, recognises five non-physical sports: chess, bridge, draughts, Go and xiangqi.However, they limit the number of mind games which can be admitted as sports.Sport is usually governed by a set of rules or customs, which serve to ensure fair competition. Winning can be determined by physical events such as scoring goals or crossing a line first. It can also be determined by judges who are scoring elements of the sporting performance, including objective or subjective measures such as technical performance or artistic impression. </p>
 
+      <p className='text-[#4F5465] text-xl mt-10'> {data?.data?.description} </p>
+      <p className='text-[#4F5465] text-xl mt-10'> {data?.data?.description} </p>
+      
 
       <div className='mt-5 p-5'>
         <div className='flex gap-7 mb-5 items-center'>
           <GiBed className='text-4xl text-[#4F5465]'></GiBed>
           <div>
-            <h6 className='text-lg text-[#4F5465]  font-semibold'>Room in a rental unit</h6>
-            <p className='text-[#4F5465]'>Your own room in a home, plus access to shared spaces.</p>
+            <h6 className='text-lg text-[#4F5465]  font-semibold'>The precise definition of what differentiates</h6>
+            <p className='text-[#4F5465]'>GAISF uses the following criteria, determining that a sport have an element of competition.</p>
           </div>
         </div>
         <div className='flex gap-7 mb-5 items-center'>
           <MdAssuredWorkload className='text-3xl text-[#4F5465]'></MdAssuredWorkload>
           <div>
             <h6 className='text-lg text-[#4F5465]  font-semibold'>Dedicated workspace</h6>
-            <p className='text-[#4F5465]'>A room with wifi that’s well-suited for working.</p>
+            <p className='text-[#4F5465]'>The inclusion of mind sports within sport definitions has not been universally accepted.</p>
           </div>
         </div>
         <div className='flex gap-7 mb-5 items-center'>
@@ -173,7 +174,7 @@ const DatailsPage = () => {
           <VscKey className='text-3xl text-[#4F5465]'></VscKey>
           <div>
             <h6 className='text-lg text-[#4F5465]  font-semibold'>Great check-in experience</h6>
-            <p className='text-[#4F5465]'>95% of recent guests gave the check-in process a 5-star rating.</p>
+            <p className='text-[#4F5465]'>95% of recent booking gave the check-in process a 5-star rating.</p>
           </div>
         </div>
         <div className='flex gap-7 items-center'>
@@ -183,6 +184,12 @@ const DatailsPage = () => {
           </div>
         </div>
       </div>
+
+
+
+      <Link to={`/dashbord/bookingPage/${data.data._id}`} >
+        <button className='btn btn-sm w-1/2 uppercase font-semibold bg-secondary hover:bg-secondary border-secondary mt-6 hover:text-white text-white '>Book Now</button>
+      </Link>
     </div>
   );
 };

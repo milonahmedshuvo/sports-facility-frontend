@@ -2,6 +2,7 @@ import run from '../../image/run.webp'
 import run2 from '../../image/run2.webp'
 import gold from '../../image/gold.svg'
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 
 
@@ -79,7 +80,7 @@ const Running = () => {
           transition={{ duration: 0.4 }} 
           className='text-center md:text-start mt-12 w-full md:w-[80%] text-text text-[16px] md:text-[18px] font-[400] loading-3 font-inter'>Running Club' commitment to excellence shines through in these impressive stats, showcasing our dedication and value to our members and the running community.</motion.p>
 
-
+          <Link to='/facilityListingPage' > 
           <motion.button
                     className="uppercase text-white bg-secondary mt-10 px-8 rounded py-3 font-semibold "
                     initial={{ opacity: 0, y: 30 }} // Start state
@@ -88,7 +89,7 @@ const Running = () => {
                 >
                     let!s run
                 </motion.button>
-
+                </Link>
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom"
-
 import { useForm, SubmitHandler } from "react-hook-form"
 import { useBookingPostMutation, useGetCheckAvaiableSortQuery } from "../../redux/api/user"
 import { useState } from "react"
 import toast from "react-hot-toast"
+
 
 type Inputs = {
   date: string
@@ -86,16 +86,7 @@ const BookingPage = () => {
 
 
 
-  // // handle submit custom 
-  // const onSubmit: SubmitHandler<Inputs> = (data) =>{
-  //   console.log('handle:', data.date)
-  //   setDate(data.date)
-  // }
-
-  // console.log("state:", date)
-  // console.log('result:',data)
-  // console.log('error:',error)
-  // console.log('array:',data?.data)
+  
 
 
 
@@ -103,15 +94,14 @@ const BookingPage = () => {
 
 
   return (
-    <div className="flex  justify-between">
+    <div className="flex  justify-between bg-white pt-7 pb-28">
       <div className="text-white w-1/3 mx-auto border-b-2 pb-4 pt-32">
         <div className=''>
 
           <img className="h-[200px] w-full" src={booking?.data?.image} alt="" />
-          <p className="text-xl font-semibold text-white my-1"> {booking?.data?.name} </p>
-          <p className="text-white"> {booking?.data?.description} </p>
-          <p className="text-white">Price: $ {booking?.data?.pricePerHour} </p>
-          <p className="text-white">Location:  {booking?.data?.location} </p>
+          <p className="text-2xl font-semibold text-[#1D1D1F] my-1"> {booking?.data?.name} </p>
+          <p className="text-[#4F5465]"> {booking?.data?.description} </p>
+          
 
         </div>
       </div>
@@ -120,7 +110,7 @@ const BookingPage = () => {
       <div className="w-1/2 pt-32">
         <form action="" className="flex gap-3" onSubmit={handleSubmitDate(onSubmitDate)} >
 
-          <input type="text" placeholder="YYYY-MM-DD" {...registerDate("date")} className="w-1/2 border py-3 px-5" />
+          <input type="text" placeholder="YYYY-MM-DD" {...registerDate("date")} className="w-1/2 border border-gray-400 outline-none py-3 px-5" />
 
 
 
@@ -151,12 +141,12 @@ const BookingPage = () => {
 
             <div className="flex flex-col my-2">
               <label>Start Time</label>
-              <input type="text" placeholder="10:00" {...registerTime("startTime")} className="w-1/2 border py-3 px-5" />
+              <input type="text" placeholder="10:00" {...registerTime("startTime")} className="w-1/2 border border-gray-400 outline-none py-3 px-5" />
             </div>
 
             <div className="flex flex-col my-2">
               <label>End Time</label>
-              <input type="text" placeholder="12:00" {...registerTime("endTime")} className="w-1/2 border py-3 px-5 " />
+              <input type="text" placeholder="12:00" {...registerTime("endTime")} className="w-1/2 border border-gray-400 outline-none py-3 px-5 " />
             </div>
 
           </div>
