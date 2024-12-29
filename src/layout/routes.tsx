@@ -11,12 +11,12 @@ import CreateAdmin from "../components/Dashbord/admin/CreateAdmin";
 import AllFacility from "../components/Dashbord/admin/AllFacility";
 import FacilityListingPage from "../page/facilityListingPage/FacilityListingPage";
 import DatailsPage from "../page/facilityListingPage/DatailsPage";
-import ContackusPage from "../page/contackus/ContackusPage";
 import BookingPage from "../page/bookingPage/BookingPage";
 import UserBooking from "../components/Dashbord/user/userbooking/userBooking";
 import AllBooking from "../components/Dashbord/admin/AllBooking";
 import ErrorPage from "../sheared/ErrorPage";
 import Manage from "../components/Dashbord/user/manage/manage";
+import ContactForm from "../components/ContactForm/ContactForm";
 // import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
@@ -58,7 +58,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/contactusPage',
-                element: <ContackusPage/>
+                // element: <ContackusPage/>
+                element: <ContactForm/>
             },
             {
                 path: '/dashbord/datails/:id',

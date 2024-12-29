@@ -183,12 +183,6 @@ const DatailsPage = () => {
           </div>
         </div>
       </div>
-
-
-
-
-
-
     </div>
   );
 };

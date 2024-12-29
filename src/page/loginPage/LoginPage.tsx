@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { useUserLoginMutation } from '../../redux/api/user'
 import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 type Inputs = {
   email: string,
@@ -12,6 +13,9 @@ type Inputs = {
 
 
 const LoginPage = () => {
+      const [email, setEmail] = useState('')
+      const [password, setPassword] = useState('')
+
 
   const {
     register,
@@ -54,6 +58,11 @@ const LoginPage = () => {
 
 
 
+  const loaginCadiansial = () => {
+     setEmail('user@example.com')
+     setPassword('12345')
+  }
+
 
 
   return (
@@ -61,11 +70,7 @@ const LoginPage = () => {
     style={{ backgroundImage: `url(${signin})` }}
     >
 
-      {/* <div className='mt-32 w-full border'>
-        <img className='w-full' src={signin} alt="" />
-      </div> */}
-
-      {/* create from here ...........  */}
+      
 
       <div className='backdrop-blur-sm bg-white/30 w-full md:w-1/3 px-20 py-10'>
 
@@ -77,6 +82,8 @@ const LoginPage = () => {
         <div className='my-4'>
         <p className='text-md text-gray-800'>Email: user@example.com</p>
         <p className='text-md text-gray-800'>password: 12345</p>
+
+        <button onClick={loaginCadiansial} className='bg-secondary text-white px-4 py-1 rounded' >User Login</button>
         </div>
 
 
@@ -95,6 +102,7 @@ const LoginPage = () => {
               type="email"
               className="pl-10 pr-10 py-2 text-black border-b-2 rounded-md focus:outline-none w-full "
               placeholder="email"
+              value={email}
               {...register("email", { required: true })}
             />
           </div>
@@ -112,6 +120,7 @@ const LoginPage = () => {
               type="password"
               className="pl-10 pr-10 py-2 text-black  border-b-2 rounded-md focus:outline-none w-full "
               placeholder="password"
+              value={password}
               {...register("password", { required: true })}
             />
           </div>
