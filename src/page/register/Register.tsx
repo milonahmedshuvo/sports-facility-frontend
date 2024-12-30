@@ -16,32 +16,31 @@ type Inputs = {
 
 
 const Register = () => {
- 
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset
   } = useForm<Inputs>({ defaultValues: { role: 'user' } })
-  
-  const [ userRegister, { data, error, isError, isSuccess } ] = useUserRegisterMutation(undefined)
+
+  const [userRegister, { data, error, isError, isSuccess }] = useUserRegisterMutation(undefined)
 
 
-    
 
 
-  if(isError){
+
+  if (isError) {
     toast.error('User Register Filed...!!')
   }
 
-  if(isSuccess){
+  if (isSuccess) {
     toast.success('User Register Successfully...!!')
     localStorage.setItem('accessToken', data.data.accessToken)
   }
 
 
 
-  
 
 
 
@@ -50,11 +49,12 @@ const Register = () => {
 
 
 
-  
+
+
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     // console.log(data)
-     
+
     userRegister({
       data: data
     })
@@ -71,28 +71,23 @@ const Register = () => {
 
 
 
-
-
   return (
     <div className=' pb-44  text-white flex flex-row justify-center items-center  bg-cover bg-center  '
-    style={{backgroundImage: `url(${signup})`}}
+      style={{ backgroundImage: `url(${signup})` }}
     >
 
-      {/* <div>
-        <img src={signup} alt="" />
-      </div> */}
 
-      {/* create from here ...........  */}
 
-      <div className='mt-32  '>
-        <p className='text-3xl text-[#00A7F9] font-semibold '>Save Your Account Now</p>
-        <span className='text-text'>please sheare your information in form </span>
+      <div className='mt-32 backdrop-blur-sm bg-white/10 w-2/4 p-12 '>
+        <p className='text-4xl text-[#b9263a] font-semibold text-center  '>Save Your Account Now</p>
+        <p className='text-text text-center mt-3 text-xl'>please sheare your information in form </p>
 
 
 
         <form onSubmit={handleSubmit(onSubmit)} className='mt-10'>
 
 
+          
 
           <div className="relative flex items-center my-2">
 
@@ -103,7 +98,7 @@ const Register = () => {
 
             <input
               type="text"
-              className="pl-10 pr-10 py-2 text-black border-b-2 rounded-md focus:outline-none w-full"
+              className="pl-10 pr-10 py-3 text-black border-b-2 rounded-md focus:outline-none w-full"
               placeholder="name"
               {...register("name", { required: true })}
             />
@@ -122,11 +117,13 @@ const Register = () => {
 
             <input
               type="email"
-              className="pl-10 pr-10 py-2 text-black border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-3 text-black border-b-2 rounded-md focus:outline-none w-full "
               placeholder="email"
               {...register("email", { required: true })}
             />
           </div>
+
+
 
 
           {/* password filed  */}
@@ -139,7 +136,7 @@ const Register = () => {
 
             <input
               type="password"
-              className="pl-10 pr-10 py-2 text-black border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-3 text-black border-b-2 rounded-md focus:outline-none w-full "
               placeholder="password"
               {...register("password", { required: true })}
             />
@@ -157,7 +154,7 @@ const Register = () => {
 
             <input
               type="text"
-              className="pl-10 pr-10 py-2 text-black  border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-3 text-black  border-b-2 rounded-md focus:outline-none w-full "
               placeholder="phone"
               {...register("phone", { required: true })}
             />
@@ -174,7 +171,7 @@ const Register = () => {
 
             <input
               type="text"
-              className="pl-10 pr-10 py-2 text-black  border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-3 text-black  border-b-2 rounded-md focus:outline-none w-full "
               placeholder="role"
               {...register("role")}
             />
@@ -194,7 +191,7 @@ const Register = () => {
 
             <input
               type="text"
-              className="pl-10 pr-10 py-2 text-black border-b-2 rounded-md focus:outline-none w-full "
+              className="pl-10 pr-10 py-3 text-black border-b-2 rounded-md focus:outline-none w-full "
               placeholder="address"
               {...register("address", { required: true })}
             />
@@ -204,13 +201,13 @@ const Register = () => {
 
           {errors.name && <span>This field is  required </span>}
 
-          <input type="submit" className='bg-[#00A7F9] text-white py-2 px-6 w-full rounded font-semibold' />
+          <input type="submit" className='bg-secondary  text-white py-3 px-6 w-full rounded font-semibold' />
         </form>
 
 
 
 
-        <p className='mt-3 text-text' >Already have an account? <Link to='/login'> <span className='text-[#00A7F9] font-semibold'>Login</span></Link> </p>
+        <p className='mt-3 text-text' >Already have an account? <Link to='/login'> <span className='text-[#b9263a] font-semibold'>Login</span></Link> </p>
 
 
 

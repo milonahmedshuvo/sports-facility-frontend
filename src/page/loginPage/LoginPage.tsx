@@ -152,7 +152,7 @@ const LoginPage = () => {
         <p className="mt-3 text-text">
           Create a new account?{" "}
           <Link to="/register">
-            <span className="text-gray-700 font-semibold">Register</span>
+            <span className="text-[#b9263a] font-semibold">Register</span>
           </Link>
         </p>
       </div>
