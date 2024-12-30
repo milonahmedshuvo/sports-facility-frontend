@@ -30,7 +30,7 @@ const AllBooking = () => {
    
 
   return (
-    <div className="text-white" >
+    <div className="text-white h-screen" >
 
 <div>
         
